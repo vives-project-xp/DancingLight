@@ -1,4 +1,6 @@
 # Dancing Lights
+<img src="../DancingLight/Project.webps" alt="Projectpic" width=600px>
+
 ## Content
 <ul>
     <li>Introduction</li>
@@ -20,12 +22,27 @@ The dancing light project will make LED's react to music. We will be working wit
 ## Design
 ## Who does what?
 - Global (entire group): 
-1. test
-- Mirko (Software & ai):
+1. Project defining (What's expected from the project)
+2. Project design (Brainstorming about options, designing connection system for multiple products)
+3. Material list (Searching cheapest solutions while mantaining quality)
+
+- Mirko (Software & ai + Scrum master):
+1. Software testing (Making a LED strip function as we want with the rasberry pi 4)
+
 - Seraphin (Software & ai):
+1. Software testing (Making a LED strip function as we want with the rasberry pi 4)
+
 - William (Software & ai):
+1. Poster design (Canva)
+
 - Elias (Netwerken):
+1. Looking for power supply solution
+2. Case design
+
 - Esteban (Software & ai):
+1. Case design
+2. README documentation
+
 ## Future changes
 ## Sources
 ## License and author info
