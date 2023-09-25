@@ -19,30 +19,30 @@ The dancing light project will make LED's react to music. We will be working wit
 ## Software
 ## Design
 ## Who does/did what?
-- Global (entire group): 
+- ### Global (entire group): 
 1. Project defining (What's expected from the project)
 2. Project design (Brainstorming about options, designing connection system for multiple products)
 3. Material list (Searching cheapest solutions while mantaining quality)
 4. Github issues 
 
-- Mirko (Software & ai + Scrum master):
+- ### Mirko (Software & ai + Scrum master):
 1. Software testing (Making a LED strip function as we want with the rasberry pi 4)
 
-- Seraphin (Software & ai):
+- ### Seraphin (Software & ai):
 1. Software testing (Making a LED strip function as we want with the rasberry pi 4)
 
-- William (Software & ai):
+- ### William (Software & ai):
 1. Poster design (Canva)
 
-- Elias (Netwerken):
+- ### Elias (Netwerken):
 1. Looking for power supply solution
 2. Case design
 
-- Esteban (Software & ai):
+- ### Esteban (Software & ai):
 1. Case design
 2. README documentation
 
-- To be determined:
+- ### To be determined:
 1. Testing product (week 7-10)/
     - Software and hardware
     - Casing (does the connection between two products work?)
