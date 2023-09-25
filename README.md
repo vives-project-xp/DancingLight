@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Dancing Lights
 ## Content
 <ul>
@@ -20,3 +21,6 @@
 ## Sources
 ## License and author info
 Made by Mirko Sinnaeve, Seraphin Sampers, William Rogov, Elias Vanthorre en Esteban Desmedt in 2023-2024, semester 1 for VIVES. 
+=======
+Hello world
+>>>>>>> 393b1329f540889e0ba892c4befd20140d4fea20
