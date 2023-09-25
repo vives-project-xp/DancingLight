@@ -1,5 +1,5 @@
 # Dancing Lights
-<img src="../DancingLight/Project.webps" alt="Projectpic" width=600px>
+<img src="IMG_0503.webp" alt="Projectpic" width=600px>
 
 ## Content
 <ul>
