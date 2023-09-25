@@ -27,9 +27,11 @@ The dancing light project will make LED's react to music. We will be working wit
 
 - ### Mirko (Software & ai + Scrum master):
 1. Software testing (Making a LED strip function as we want with the rasberry pi 4)
+2. Searching code
 
 - ### Seraphin (Software & ai):
 1. Software testing (Making a LED strip function as we want with the rasberry pi 4)
+2. Searching code
 
 - ### William (Software & ai):
 1. Poster design (Canva)
@@ -41,6 +43,7 @@ The dancing light project will make LED's react to music. We will be working wit
 - ### Esteban (Software & ai):
 1. Case design
 2. README documentation
+3. Searching code
 
 - ### To be determined:
 1. Testing product (week 7-10)/
@@ -53,6 +56,10 @@ The dancing light project will make LED's react to music. We will be working wit
     - Powerpoint final presentation
     - ...
 4. Preparing final presentation
+5. Coding:
+    - LED's on sound strength
+    - Template lighting for LED's
+
 
 
 ## Future changes
