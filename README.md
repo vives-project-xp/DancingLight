@@ -1,4 +1,4 @@
-# Dancing Lights
+# Dancing Light
 ## Content
 <ul>
     <li>Introduction</li>
