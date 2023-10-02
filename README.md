@@ -7,6 +7,7 @@
     <li>Software</li>
     <li>Who does what?</li>
     <li>Future changes</li>
+    <li>Bill Of Materials</li>
     <li>Sources</li>
     <li>License and author info</li>
 </ul>
@@ -63,6 +64,20 @@ The dancing light project will make LED's react to music. We will be working wit
 
 
 ## Future changes
+
+## BOM
+| Description | Quantity | Price |
+|---|---|---|
+| Geluidssensor | 1 | [€0.99](https://www.otronic.nl/nl/geluidssensor-module-voor-arduino.html?source=googlebase&gclid=CjwKCAjw6p-oBhAYEiwAgg2PgvJGbAdSLS3JsDfqUBgOOat_ftWyWaGPusD0NC0eCy59e2G_c6wvgRoCTzEQAvD_BwE) |
+|SK6812 5V LED | 2m | [€23](https://www.amazon.nl/BTF-LIGHTING-Vergelijkbare-Individueel-Adresseerbare-Niet-Waterdicht/dp/B01N2PC9KK?th=1&psc=1) |
+| Stekkeradapter 5V 10A 50W| 1 | [€21.99](https://www.amazon.nl/Transformatoren-AC100-240V-Omvormer-Stekkeradapter-Verlichting/dp/B07PBNCFDG?th=1) |
+| Adapter omvormer | 1 | [€4.39](https://www.allekabels.be/dc-connector-kabel/528/1217090/dc-connector.html?lang=nl-be) |
+| 3Pin Connector | 1 | [€9.99](https://www.amazon.nl/HUAZIZ-vrouwelijk-mannelijke-vrouwelijke-elektrische/dp/B0BPP87N9G/ref=sr_1_5?crid=11ONOETG871I1&keywords=3+pin+connector&qid=1696237070&sprefix=3+pin+connec%2Caps%2C281&sr=8-5) |
+| 3D printing | / | €4 (voorbehouden) |
+
+Totaal: €60.4
+
+
 ## Sources
 ## License and author info
 Made by Mirko Sinnaeve, Seraphin Sampers, William Rogov, Elias Vanthorre en Esteban Desmedt in 2023-2024, semester 1 for VIVES. 
