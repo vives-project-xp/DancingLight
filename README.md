@@ -18,7 +18,10 @@
 The dancing light project will make LED's react to music. We will be working with a sound sensor which will send a signal depending on the strength of the sound/music. Using a rasberry pi 4 we can code a program to make this happen.
 ## Hardware
 ## Software
-1 VNC Viewer (https://www.realvnc.com/en/connect/download/viewer/): This is the software we used to program the rasberry pi 4. It's easy to set up after installing. An advantage of this software is the ability to work on the same project at the same time. Whenever one person changes something all other members see the changes on their own device.
+<ul>
+<li>1 VNC Viewer (https://www.realvnc.com/en/connect/download/viewer/): This is the software we used to program the rasberry pi 4. It's easy to set up after installing. An advantage of this software is the ability to work on the same project at the same time. Whenever one person changes something all other members see the changes on their own device.
+</li>
+</ul>
 ## Design
 ## Who does/did what?
 - ### Global (entire group): 
