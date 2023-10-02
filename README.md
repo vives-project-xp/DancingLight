@@ -59,6 +59,7 @@ The dancing light project will make LED's react to music. We will be working wit
 5. Coding:
     - LED's on sound strength
     - Template lighting for LED's
+6. ESP32 Testen
 
 
 
