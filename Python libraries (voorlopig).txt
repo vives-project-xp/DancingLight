@@ -1,0 +1,3 @@
+Specifiek nodig voor ons led script nu:
+-adafruit-circuitpython-neopixel
+-rpi-ws281x
