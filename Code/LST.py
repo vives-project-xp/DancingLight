@@ -3,58 +3,63 @@ import numpy as np
 import time
 import matplotlib.pyplot as plt
 
-# Functie om de frequentie te berekenen
+# Function to calculate the frequency
 def calculate_frequency(signal, sample_rate):
     fft_result = np.fft.fft(signal)
     magnitude = np.abs(fft_result)
     frequency = np.argmax(magnitude) * sample_rate / len(signal)
     return frequency
 
-# Initialisatie van PyAudio
+# Initialization of PyAudio
 p = pyaudio.PyAudio()
 
-# Audio-instellingen
-sample_rate = 44100  # Aanpassen naar de gewenste sample rate
+# Audio settings
+sample_rate = 44100  # Adjust to your desired sample rate
 chunk_size = 1024
 
-# Het creëren van een audio input stream
+# Create an audio input stream
 stream = p.open(format=pyaudio.paInt16, channels=1, rate=sample_rate, input=True,
                 frames_per_buffer=chunk_size)
 
 try:
-    plt.ion()  # Schakel interactieve modus in voor realtime plotten
-    fig, ax = plt.subplots()
+    plt.ion()  # Enable interactive mode for real-time plotting
+    fig, ax_low = plt.subplots(1, 1)
+    fig, ax_high = plt.subplots(1, 1)
     x = np.arange(0, chunk_size)
-    line, = ax.plot(x, np.zeros(chunk_size))
-    ax.set_xlim(0, chunk_size)
-    ax.set_ylim(-32768, 32767)
+    line_low, = ax_low.plot(x, np.zeros(chunk_size))
+    line_high, = ax_high.plot(x, np.zeros(chunk_size))
+    ax_low.set_xlim(0, chunk_size)
+    ax_high.set_xlim(0, chunk_size)
+    ax_low.set_ylim(-500, 500)
+    ax_high.set_ylim(-15000, 15000)
     
-    # Stel de gewenste looptijd in (bijvoorbeeld 60 seconden)
-    runtime = 60  # Duur in seconden
+    # Set the desired duration (e.g., 60 seconds)
+    runtime = 3600  # Duration in seconds
     start_time = time.time()
     
     while time.time() - start_time < runtime:
-        # Lees audio van de microfoon
+        # Read audio from the microphone
         audio_data = np.frombuffer(stream.read(chunk_size), dtype=np.int16)
         
-        # Bereken de frequentie
+        # Calculate the frequency
         frequency = calculate_frequency(audio_data, sample_rate)
         
-        # Druk de frequentie af
-        print(f'Frequentie: {frequency:.2f} Hz')
+        # Plot the audio data based on frequency
+        line_low.set_ydata(audio_data)
+        line_high.set_ydata(audio_data)
+        ax_low.set_title(f'Low Frequency Sound: {frequency:.2f} Hz')
+        ax_high.set_title(f'High Frequency Sound: {frequency:.2f} Hz')
         
-        # Plot de audiogegevens
-        line.set_ydata(audio_data)
         fig.canvas.flush_events()
         
 except KeyboardInterrupt:
-    print("Opname gestopt.")
+    print("Recording stopped.")
 
-# Sluit de audio stream en PyAudio
+# Close the audio stream and PyAudio
 stream.stop_stream()
 stream.close()
 p.terminate()
 
-# Sluit Matplotlib
+# Close Matplotlib
 plt.ioff()
 plt.show()
