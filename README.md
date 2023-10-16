@@ -18,19 +18,25 @@
 The dancing light project will make LED's react to music. We will be working with a sound sensor which will send a signal depending on the strength of the sound/music. Using a rasberry pi 4 we can code a program to make this happen.
 The project will have a few modes. Some generic effects will be added into a program. Lastly the mode which listens to audio input will also be implemented into the project.
 ## Hardware
-Our projects requires the following hardware and materials to be constructed:
+Our projects requires the following hardware and materials to be constructed (links included in BOM):
 <li>1 Rasberry pi 4</li>
+<img src="./Images/RasberryPi4.jpg" alt="rp4" width=600px>
 <li>2 Stekkeradapter 5V 10A</li>
+<img src="./Images/Stekkeradapter.jpg" alt="stekkerasapter" width=600px>
 <li>3 Adapter -> DC</li>
+<img src="./Images/Adapter-Dc.jpg" alt="adapterdc" width=600px>
 <li>4 3Pin Connector</li>
+<img src="./Images/3Pin.jpg" alt="3Pin" width=600px>
 <li>5 Ledstrip 5V</li>
+<img src="./Images/LED5V.jpg" alt="LEDS" width=600px>
 <li>6 Geluidssensor</li>
+<img src="./Images/Geluidssensor.webp" alt="Geluidssensor" width=600px>
 <li>7 Casing 3D print</li>
 
 ## Software
 <ul>
 <li>1 VNC Viewer (https://www.realvnc.com/en/connect/download/viewer/): This is the software we used to program the rasberry pi 4. It's easy to set up after installing. An advantage of this software is the ability to work on the same project at the same time. Whenever one person changes something all other members see the changes on their own device live.
-</li>
+</li><br>
 <img src="./Images/VNC Coding.png" alt="vnc" width=600px>
 <li>2 Python coding environment: VNC viewer has the ability to write code in the program itself, opening the right type of file in your folder.
 </li><br>
