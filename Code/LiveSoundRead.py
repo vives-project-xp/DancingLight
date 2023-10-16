@@ -2,6 +2,7 @@ import pyaudio
 import numpy as np
 import time
 
+frArr = []
 # Functie om de frequentie te berekenen
 def calculate_frequency(signal, sample_rate):
     fft_result = np.fft.fft(signal)
@@ -27,12 +28,18 @@ try:
         
         # Bereken de frequentie
         frequency = calculate_frequency(audio_data, sample_rate)
-        
-        # Druk de frequentie af
-        print(f'Frequentie: {frequency:.2f} Hz')
-        
+        frArr.append(frequency)
         # Wacht 10 ms
+        average = np.mean(frArr)
+        rounded_average = round(average)
+        rounded_frequency = round(frequency)
+        # Druk de frequentie af
+        print(f'Frequentie: {rounded_frequency} Hz')
+        print("Average:   ", rounded_average, "Hz")
+        print("--------------------------")
         time.sleep(0.01)
+
+
 
 except KeyboardInterrupt:
     print("Opname gestopt.")
@@ -41,3 +48,4 @@ except KeyboardInterrupt:
 stream.stop_stream()
 stream.close()
 p.terminate()
+

@@ -13,10 +13,12 @@
 </ul>
 
 ## Introduction
-
 ## Project explained
 The dancing light project will make LED's react to music. We will be working with a sound sensor which will send a signal depending on the strength of the sound/music. Using a rasberry pi 4 we can code a program to make this happen.
 The project will have a few modes. Some generic effects will be added into a program. Lastly the mode which listens to audio input will also be implemented into the project.
+<img src="./Images/Case.png" alt="Case" width=600px>
+Taking the entire casing into a count it exists out four different parts. The lid has some holes for air circulation and the top is printed very thin, just so the light of the LEDs is visible from the outside. At the sides a system was added to connect two cases with each other. It uses an external part to connect the sides. The main product (containing the rasberry pi) has two extra parts added to ensure the light is spread all over the casing. These parts are a kind of bridge that hang over the rasberry pi so LEDs can be connected on top of it. All other cases connected don't have this feature, because there's no rasberry pi in the other cases.
+
 ## Hardware
 Our projects requires the following hardware and materials to be constructed (links included in BOM):
 <li>1 Rasberry pi 4</li><br>
