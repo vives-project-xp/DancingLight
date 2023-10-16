@@ -20,17 +20,17 @@ The project will have a few modes. Some generic effects will be added into a pro
 ## Hardware
 Our projects requires the following hardware and materials to be constructed (links included in BOM):
 <li>1 Rasberry pi 4</li>
-<img src="./Images/RasberryPi4.jpg" alt="rp4" width=600px>
+<img src="./Images/RasberryPi4.jpg" alt="rp4" width=300px>
 <li>2 Stekkeradapter 5V 10A</li>
-<img src="./Images/Stekkeradapter.jpg" alt="stekkerasapter" width=600px>
+<img src="./Images/Stekkeradapter.jpg" alt="stekkerasapter" width=300px>
 <li>3 Adapter -> DC</li>
-<img src="./Images/Adapter-Dc.jpg" alt="adapterdc" width=600px>
+<img src="./Images/Adapter-Dc.jpg" alt="adapterdc" width=300px>
 <li>4 3Pin Connector</li>
-<img src="./Images/3Pin.jpg" alt="3Pin" width=600px>
+<img src="./Images/3Pin.jpg" alt="3Pin" width=300px>
 <li>5 Ledstrip 5V</li>
-<img src="./Images/LED5V.jpg" alt="LEDS" width=600px>
+<img src="./Images/LED5V.jpg" alt="LEDS" width=300px>
 <li>6 Geluidssensor</li>
-<img src="./Images/Geluidssensor.webp" alt="Geluidssensor" width=600px>
+<img src="./Images/Geluidssensor.webp" alt="Geluidssensor" width=300px>
 <li>7 Casing 3D print</li>
 
 ## Software
