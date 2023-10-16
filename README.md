@@ -51,6 +51,7 @@ Our projects requires the following hardware and materials to be constructed (li
 3. Material list (Searching cheapest solutions while mantaining quality)
 4. Github issues 
 
+
 - ### Mirko (Software & ai + Scrum master):
 1. Software testing (Making a LED strip function as we want with the rasberry pi 4)
 2. Searching code
@@ -61,6 +62,7 @@ Our projects requires the following hardware and materials to be constructed (li
 
 - ### William (Software & ai):
 1. Poster design (Canva)
+2. Coding to read mp3 file
 
 - ### Elias (Netwerken):
 1. Looking for power supply solution
@@ -70,6 +72,7 @@ Our projects requires the following hardware and materials to be constructed (li
 1. Case design
 2. README documentation
 3. Searching code
+4. Coding to read mp3 file
 
 - ### To be determined:
 1. Testing product (week 7-10)/
