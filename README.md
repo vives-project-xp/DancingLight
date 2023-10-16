@@ -1,5 +1,7 @@
 # Dancing Light
+
 ## Content
+
 <ul>
     <li>Introduction</li>
     <li>Project explained</li>
@@ -15,72 +17,105 @@
 ## Introduction
 
 ## Project explained
-The dancing light project will make LED's react to music. We will be working with a sound sensor which will send a signal depending on the strength of the sound/music. Using a rasberry pi 4 we can code a program to make this happen.
+
+The dancing light project will make LED's react to music.
+
+We will be working with a sound sensor which will send a signal depending on the strength of the sound/music. Using a Raspberry Pi 4 we can code a program to make this happen.
+
 The project will have a few modes. Some generic effects will be added into a program. Lastly the mode which listens to audio input will also be implemented into the project.
+
 ## Hardware
+
 Our projects requires the following hardware and materials to be constructed (links included in BOM):
-<li>1 Rasberry pi 4</li><br>
+
+1. Raspberry Pi 4
+<br>
 <img src="./Images/RasberryPi4.jpg" alt="rp4" width=300px>
-<li>2 Stekkeradapter 5V 10A</li><br>
-<img src="./Images/Stekkeradapter.jpg" alt="stekkerasapter" width=300px>
-<li>3 Adapter -> DC</li><br>
+
+2. Stekkeradapter 5V 10A
+<br>
+<img src="./Images/Stekkeradapter.jpg" alt="stekkeradapter" width=300px>
+
+3. Adapter -> DC
+<br>
 <img src="./Images/Adapter-Dc.jpg" alt="adapterdc" width=300px>
-<li>4 3Pin Connector</li><br>
+
+4. 3Pin Connector
+<br>
 <img src="./Images/3Pin.jpg" alt="3Pin" width=300px>
-<li>5 Ledstrip 5V</li><br>
+
+5. Ledstrip 5V
+<br>
 <img src="./Images/LED5V.jpg" alt="LEDS" width=300px>
-<li>6 Geluidssensor</li><br>
+
+6. Geluidssensor
+<br>
 <img src="./Images/Geluidssensor.webp" alt="Geluidssensor" width=300px>
-<li>7 Casing 3D print</li>
+
+7. Casing 3D print
 
 ## Software
-<ul>
-<li>1 VNC Viewer (https://www.realvnc.com/en/connect/download/viewer/): This is the software we used to program the rasberry pi 4. It's easy to set up after installing. An advantage of this software is the ability to work on the same project at the same time. Whenever one person changes something all other members see the changes on their own device live.
-</li><br>
+
+1. [VNC Viewer](https://www.realvnc.com/en/connect/download/viewer/):
+
+This is the software we used to program the Raspberry Pi 4. It's easy to set up after installing. An advantage of this software is the ability to work on the same project at the same time. Whenever one person changes something all other members see the changes on their own device live.
+
 <img src="./Images/VNC Coding.png" alt="vnc" width=600px>
-<li>2 Python coding environment: VNC viewer has the ability to write code in the program itself, opening the right type of file in your folder.
-</li><br>
+
+&nbsp;
+
+2. Python coding environment:
+
+VNC viewer has the ability to write code in the program itself, opening the right type of file in your folder.
+<br>
 <img src="./Images/VNCPython.png" alt="vncpy" width=600px>
-</ul>
 
 ## Design
+
 ## Who does/did what?
-- ### Global (entire group): 
+
+- ### Global (entire group)
+
 1. Project defining (What's expected from the project)
 2. Project design (Brainstorming about options, designing connection system for multiple products)
 3. Material list (Searching cheapest solutions while mantaining quality)
-4. Github issues 
+4. Github issues
 
+- ### Mirko (Software & ai + Scrum master)
 
-- ### Mirko (Software & ai + Scrum master):
 1. Software testing (Making a LED strip function as we want with the rasberry pi 4)
 2. Searching code
 
-- ### Seraphin (Software & ai):
+- ### Seraphin (Software & ai)
+
 1. Software testing (Making a LED strip function as we want with the rasberry pi 4)
 2. Searching code
 
-- ### William (Software & ai):
+- ### William (Software & ai)
+
 1. Poster design (Canva)
 2. Coding to read mp3 file
 
-- ### Elias (Netwerken):
+- ### Elias (Netwerken)
+
 1. Looking for power supply solution
 2. Case design
 
-- ### Esteban (Software & ai):
+- ### Esteban (Software & ai)
+
 1. Case design
 2. README documentation
 3. Searching code
 4. Coding to read mp3 file
 
-- ### To be determined:
+- ### To be determined
+
 1. Testing product (week 7-10)/
     - Software and hardware
     - Casing (does the connection between two products work?)
 2. Optimizing product:
     - ...
-3. Document finalization: 
+3. Document finalization:
     - README
     - Powerpoint final presentation
     - ...
@@ -90,11 +125,10 @@ Our projects requires the following hardware and materials to be constructed (li
     - Template lighting for LED's
 6. ESP32 Testen
 
-
-
 ## Future changes
 
 ## BOM
+
 | Description | Quantity | Price |
 |---|---|---|
 | Geluidssensor | 1 | [€0.99](https://www.otronic.nl/nl/geluidssensor-module-voor-arduino.html?source=googlebase&gclid=CjwKCAjw6p-oBhAYEiwAgg2PgvJGbAdSLS3JsDfqUBgOOat_ftWyWaGPusD0NC0eCy59e2G_c6wvgRoCTzEQAvD_BwE) |
@@ -107,9 +141,8 @@ Our projects requires the following hardware and materials to be constructed (li
 
 Totaal: €151.16
 
-
 ## Sources
+
 ## License and author info
-Made by Mirko Sinnaeve, Seraphin Sampers, William Rogov, Elias Vanthorre en Esteban Desmedt in 2023-2024, semester 1 for VIVES. 
 
-
+Made by Mirko Sinnaeve, Seraphin Sampers, William Rogov, Elias Vanthorre en Esteban Desmedt in 2023-2024, semester 1 for VIVES.
