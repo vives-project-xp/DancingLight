@@ -1,19 +1,22 @@
-import librosa
+import soundfile as sf
+import numpy as np
+from scipy.io import wavfile
 import matplotlib.pyplot as plt
+from scipy import signal
 
-# Load the WAV file
-wav_file = "test.wav"
-audio_array, sample_rate = librosa.load(wav_file)
 
-# Compute the STFT of the audio signal
-stft = librosa.core.stft(audio_array)
+# Read the audio file
+audio_data, fs = sf.read('test.wav')
 
-# Compute the spectrogram
-spectrogram = librosa.core.amplitude_to_db(stft)
+# Plot the audio waveform
+time = np.arange(0, audio_data.shape[0]) / fs
+plt.figure(figsize=(12, 6))
+for i in range(audio_data.shape[1]):
+    plt.subplot(audio_data.shape[1], 1, i+1)
+    plt.plot(time, audio_data[:, i], label=f'Channel {i+1}')
+    plt.xlabel('Time (s)')
+    plt.ylabel('Amplitude')
+    plt.legend()
 
-# Plot the spectrogram
-plt.imshow(spectrogram)
-plt.xlabel("Time (s)")
-plt.ylabel("Frequency (Hz)")
-plt.title("Spectrogram of WAV file")
+plt.tight_layout()
 plt.show()
