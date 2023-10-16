@@ -33,7 +33,7 @@ Our projects requires the following hardware and materials to be constructed:
 </li>
 <img src="./Images/VNC Coding.png" alt="vnc" width=600px>
 <li>2 Python coding environment: VNC viewer has the ability to write code in the program itself, opening the right type of file in your folder.
-</li>
+</li><br>
 <img src="./Images/VNCPython.png" alt="vncpy" width=600px>
 </ul>
 
