@@ -19,17 +19,17 @@ The dancing light project will make LED's react to music. We will be working wit
 The project will have a few modes. Some generic effects will be added into a program. Lastly the mode which listens to audio input will also be implemented into the project.
 ## Hardware
 Our projects requires the following hardware and materials to be constructed (links included in BOM):
-<li>1 Rasberry pi 4</li>
+<li>1 Rasberry pi 4</li><br>
 <img src="./Images/RasberryPi4.jpg" alt="rp4" width=300px>
-<li>2 Stekkeradapter 5V 10A</li>
+<li>2 Stekkeradapter 5V 10A</li><br>
 <img src="./Images/Stekkeradapter.jpg" alt="stekkerasapter" width=300px>
-<li>3 Adapter -> DC</li>
+<li>3 Adapter -> DC</li><br>
 <img src="./Images/Adapter-Dc.jpg" alt="adapterdc" width=300px>
-<li>4 3Pin Connector</li>
+<li>4 3Pin Connector</li><br>
 <img src="./Images/3Pin.jpg" alt="3Pin" width=300px>
-<li>5 Ledstrip 5V</li>
+<li>5 Ledstrip 5V</li><br>
 <img src="./Images/LED5V.jpg" alt="LEDS" width=300px>
-<li>6 Geluidssensor</li>
+<li>6 Geluidssensor</li><br>
 <img src="./Images/Geluidssensor.webp" alt="Geluidssensor" width=300px>
 <li>7 Casing 3D print</li>
 
