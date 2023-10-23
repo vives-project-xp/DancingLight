@@ -33,6 +33,7 @@ Our projects requires the following hardware and materials to be constructed (li
 1. Raspberry Pi 4
 <br>
 <img src="./Images/RasberryPi4.jpg" alt="rp4" width=300px>
+<hr>
 <img src="./Images/rasberrypins.png" alt="rp4" width=300px>
 
 2. Stekkeradapter 5V 10A
