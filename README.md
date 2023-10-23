@@ -73,9 +73,6 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 <br>
 <img src="./Images/VNCPython.png" alt="vncpy" width=600px>
 
-## Design
-<img src="./Images/Case.png" alt="Case" width=600px>
-
 ## Who does/did what?
 
 - ### Global (entire group)
@@ -90,27 +87,31 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 1. Software testing (Making a LED strip function as we want with the rasberry pi 4)
 2. Searching code
 
+
 - ### Seraphin (Software & ai)
 
 1. Software testing (Making a LED strip function as we want with the rasberry pi 4)
 2. Searching code
+3. Rasberry configuration
 
 - ### William (Software & ai)
 
-1. Poster design (Canva)
+1. Poster design
 2. Coding to read mp3 file
+3. Presentation
 
 - ### Elias (Netwerken)
 
 1. Looking for power supply solution
 2. Case design
+3. Rasberry configuration
 
 - ### Esteban (Software & ai)
 
 1. Case design
 2. README documentation
 3. Searching code
-4. Coding to read mp3 file
+4. Coding to read mp3 file (and sound based effects)
 
 - ### To be determined
 
@@ -126,8 +127,8 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 4. Preparing final presentation
 5. Coding:
     - LED's on sound strength
-    - Template lighting for LED's
-6. ESP32 Testen
+    - Template lighting for LED's (Done)
+6. ESP32 Testen (Dropped)
 
 ## Future changes
 
