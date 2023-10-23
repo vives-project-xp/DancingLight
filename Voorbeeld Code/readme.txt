@@ -1,0 +1,1 @@
+in deze map zit code van het internet die de nodige stappen en ideën bevat om dingen te doen. Het is niet de bedoeling dat je deze code aanpast, je gebruikt dit enkel voor het copiëeren naar je eigen code. peace.
