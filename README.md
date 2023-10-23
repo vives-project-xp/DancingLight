@@ -26,7 +26,6 @@ The project will have a few modes. Some generic effects will be added into a pro
 <img src="./Images/Case.png" alt="Case" width=600px>
 Taking the entire casing into a count it exists out four different parts. The lid has some holes for air circulation and the top is printed very thin, just so the light of the LEDs is visible from the outside. At the sides a system was added to connect two cases with each other. It uses an external part to connect the sides. The main product (containing the rasberry pi) has two extra parts added to ensure the light is spread all over the casing. These parts are a kind of bridge that hang over the rasberry pi so LEDs can be connected on top of it. All other cases connected don't have this feature, because there's no rasberry pi in the other cases.
 
-
 ## Hardware
 
 Our projects requires the following hardware and materials to be constructed (links included in BOM):
@@ -34,6 +33,7 @@ Our projects requires the following hardware and materials to be constructed (li
 1. Raspberry Pi 4
 <br>
 <img src="./Images/RasberryPi4.jpg" alt="rp4" width=300px>
+<img src="./Images/rasberrypins.png" alt="rp4" width=300px>
 
 2. Stekkeradapter 5V 10A
 <br>
