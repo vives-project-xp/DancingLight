@@ -74,6 +74,7 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 <img src="./Images/VNCPython.png" alt="vncpy" width=600px>
 
 ## Design
+<img src="./Images/Case.png" alt="Case" width=600px>
 
 ## Who does/did what?
 
@@ -145,6 +146,7 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 Totaal: €151.16
 
 ## Sources
+Github: https://github.com/vives-project-xp/DancingLight
 
 ## License and author info
 
