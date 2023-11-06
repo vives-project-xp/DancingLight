@@ -37,7 +37,7 @@ try:
         print(f'Frequentie: {rounded_frequency} Hz')
         print("Average:   ", rounded_average, "Hz")
         print("--------------------------")
-        time.sleep(0.01)
+        time.sleep(0.1)
 
 
 

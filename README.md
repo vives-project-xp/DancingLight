@@ -105,6 +105,7 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 1. Looking for power supply solution
 2. Case design
 3. Rasberry configuration
+4. Solderen
 
 - ### Esteban (Software & ai)
 
