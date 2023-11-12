@@ -129,7 +129,7 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 5. Coding:
     - LED's on sound strength
     - Template lighting for LED's (Done)
-6. ESP32 Testen (Dropped)
+6. Case connection (important)
 
 ## Future changes
 
