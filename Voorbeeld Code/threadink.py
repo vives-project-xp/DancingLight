@@ -26,5 +26,3 @@ while(True):
             t1.join()
     time.sleep(1)
     i += 1
-
-GPIO.cleanup()
