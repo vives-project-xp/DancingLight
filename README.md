@@ -108,6 +108,8 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 
 1. Poster design
 2. Presentation
+3. Searching code for the microphone
+4. Integrating the hardware to the Raspberry
 
 - ### Elias (Netwerken)
 
