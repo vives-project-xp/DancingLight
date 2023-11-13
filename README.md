@@ -30,7 +30,7 @@ Taking the entire casing into a count it exists out of four different parts. The
 1. Audioreact
 2. Rainbow
 3. Twolights
-<img src="./Images/twolights.jpg" alt="2lights" width=600px>
+<img src="./Images/twolight.jpg" alt="2lights" width=600px>
 
 ## Hardware
 
