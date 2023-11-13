@@ -26,10 +26,17 @@ The project will have a few modes. Some generic effects will be added into a pro
 <img src="./Images/Case.png" alt="Case" width=600px>
 Taking the entire casing into a count it exists out of four different parts. The lid has some holes for air circulation and the top is printed very thin, just so the light of the LEDs is visible from the outside. At the sides a system was added to connect two cases with each other. It uses an external part to connect the sides. To ensure the same lighting in each box, we decided to add the rasberry to the back of the main box. This will make it so the main box will be coming forward when compared to the other boxes when connected to for example a wall. Originally we used to parts which would bridge over the rasberry to provide light all over the box, but this caused the issue that you could visually see the LED's on one side and only the light on the other side. 
 
+## Effects
+1. Audioreact
+2. Rainbow
+3. Twolights
+<img src="./Images/twolights.jpg" alt="2lights" width=600px>
+
 ## Hardware
 
 Our projects requires the following hardware and materials to be constructed (links included in BOM):
 <hr>
+
 1. Raspberry Pi 4
 <br>
 <img src="./Images/RasberryPi4.jpg" alt="rp4" width=300px>
@@ -137,7 +144,7 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 
 ## Future changes
 1. Adding more boxes
-2. ..
+2. ...
 
 ## BOM
 
