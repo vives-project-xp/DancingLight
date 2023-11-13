@@ -136,6 +136,8 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 6. Case connection (important)
 
 ## Future changes
+1. Adding more boxes
+2. ...
 
 ## BOM
 
