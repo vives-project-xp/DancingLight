@@ -137,7 +137,7 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 
 ## Future changes
 1. Adding more boxes
-2. ...
+2. ..
 
 ## BOM
 
