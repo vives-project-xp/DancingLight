@@ -30,8 +30,8 @@ try:
     line_high, = ax_high.plot(x, np.zeros(chunk_size))
     ax_low.set_xlim(0, chunk_size)
     ax_high.set_xlim(0, chunk_size)
-    ax_low.set_ylim(-500, 500)
-    ax_high.set_ylim(-15000, 15000)
+    ax_low.set_ylim(-2500, 2500)
+    ax_high.set_ylim(-40000, 40000)
     
     # Set the desired duration (e.g., 60 seconds)
     runtime = 3600  # Duration in seconds

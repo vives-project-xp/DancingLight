@@ -19,12 +19,12 @@
 
 The dancing light project will make LED's react to music.
 
-We will be working with a sound sensor which will send a signal depending on the strength of the sound/music. Using a Raspberry Pi 4 we can code a program to make this happen.
-
-The project will have a few modes. Some generic effects will be added into a program. Lastly the mode which listens to audio input will also be implemented into the project.
+We will be working with a sound sensor which will send a signal depending on the strength of the sound/music. Using a Raspberry Pi 4 we can code a program to make this happen. We used VNC for most of our programming (more info in software)
+.
+The project will have a few modes. Some generic effects will be added into a program. Lastly the mode which listens to audio input will also be implemented into the project. We use a USB mic to listen to the audio due to the rasberry only being able to take in digital input on the gpio pins. With this mic we can connect it to a USB port on the rasberry and make a program which can observe analog input. This way we can visualize sound strength, frequencies and other sound related variables. With the analog way we can only display light for the on and off state.
 
 <img src="./Images/Case.png" alt="Case" width=600px>
-Taking the entire casing into a count it exists out four different parts. The lid has some holes for air circulation and the top is printed very thin, just so the light of the LEDs is visible from the outside. At the sides a system was added to connect two cases with each other. It uses an external part to connect the sides. The main product (containing the rasberry pi) has two extra parts added to ensure the light is spread all over the casing. These parts are a kind of bridge that hang over the rasberry pi so LEDs can be connected on top of it. All other cases connected don't have this feature, because there's no rasberry pi in the other cases.
+Taking the entire casing into a count it exists out of four different parts. The lid has some holes for air circulation and the top is printed very thin, just so the light of the LEDs is visible from the outside. At the sides a system was added to connect two cases with each other. It uses an external part to connect the sides. To ensure the same lighting in each box, we decided to add the rasberry to the back of the main box. This will make it so the main box will be coming forward when compared to the other boxes when connected to for example a wall. Originally we used to parts which would bridge over the rasberry to provide light all over the box, but this caused the issue that you could visually see the LED's on one side and only the light on the other side. 
 
 ## Hardware
 
@@ -81,11 +81,14 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 2. Project design (Brainstorming about options, designing connection system for multiple products)
 3. Material list (Searching cheapest solutions while mantaining quality)
 4. Github issues
+5. Group meetings
 
 - ### Mirko (Software & ai + Scrum master)
 
 1. Software testing (Making a LED strip function as we want with the rasberry pi 4)
 2. Searching code
+3. MQTT
+4. Issue management
 
 
 - ### Seraphin (Software & ai)
@@ -97,8 +100,7 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 - ### William (Software & ai)
 
 1. Poster design
-2. Coding to read mp3 file
-3. Presentation
+2. Presentation
 
 - ### Elias (Netwerken)
 
@@ -119,8 +121,10 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 1. Testing product (week 7-10)/
     - Software and hardware
     - Casing (does the connection between two products work?)
+        1. Top of first case was printed to thick (no light could pass)
 2. Optimizing product:
-    - ...
+    - Thinner top layer
+    - Rasberry added to the back of the case
 3. Document finalization:
     - README
     - Powerpoint final presentation
@@ -129,9 +133,11 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 5. Coding:
     - LED's on sound strength
     - Template lighting for LED's (Done)
-6. ESP32 Testen (Dropped)
+6. Case connection (important)
 
 ## Future changes
+1. Adding more boxes
+2. ..
 
 ## BOM
 
