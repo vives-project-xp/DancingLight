@@ -23,8 +23,8 @@ We will be working with a sound sensor which will send a signal depending on the
 .
 The project will have a few modes. Some generic effects will be added into a program. Lastly the mode which listens to audio input will also be implemented into the project. We use a USB mic to listen to the audio due to the rasberry only being able to take in digital input on the gpio pins. With this mic we can connect it to a USB port on the rasberry and make a program which can observe analog input. This way we can visualize sound strength, frequencies and other sound related variables. With the analog way we can only display light for the on and off state.
 
-<img src="./Images/Case_1.png" alt="Case" width=600px>
-<img src="./Images/Case_2.png" alt="Case" width=600px>
+<img src="./Images/Case_1.JPG" alt="Case" width=600px>
+<img src="./Images/Case_2.JPG" alt="Case" width=600px>
 Taking the entire casing into a count it exists out of four different parts. The lid has some holes for air circulation and the top is printed very thin, just so the light of the LEDs is visible from the outside. At the sides a system was added to connect two cases with each other. It uses an external part to connect the sides. To ensure the same lighting in each box, we decided to add the rasberry to the back of the main box. This will make it so the main box will be coming forward when compared to the other boxes when connected to for example a wall. Originally we used to parts which would bridge over the rasberry to provide light all over the box, but this caused the issue that you could visually see the LED's on one side and only the light on the other side. 
 
 ## Effects
