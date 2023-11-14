@@ -3,6 +3,7 @@ De .gcode files heb ik zelf gesliced via de crealty print slicer op basis van de
 Het gebruiken van deze .gcode is geen garantie op succes op de S1 PLUS maar het werd gevraagd dat ik deze reeds slice via mijn settigns vandaar.
 De vorige print die ontvangen werd via het school had enige defecten zoals het warpen van de grote onderdelen als ook het niet mooi afwerken van openvlaktes. 
 Wat me ook opviel bij de prints is dat deze op elk aspect toch enkele mms te groot uitvielen heb geen idee wat hiervan de reden zou kunnen zijn. (bij het printen thuis had ik hiermee niet direct een probleem)
+in de images case_1 en case_2 krijg je een overzicht van hoe het geheel er zou moeten uitzien.
 
 
 Naam stl						kleur			printer			aantal		opmerking
