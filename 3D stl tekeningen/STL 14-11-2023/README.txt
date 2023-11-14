@@ -2,12 +2,12 @@ Zowel de stl als de .gcode files heb ik hier geplaats.
 De .gcode files heb ik zelf gesliced via de crealty print slicer op basis van de ender-3 S1 PLUS. Maar met dezelfde settings waarmij ik op mijn eigen ender 3 pro de behuizing reeds geprint heb (succesvol).
 Het gebruiken van deze .gcode is geen garantie op succes op de S1 PLUS maar het werd gevraagd dat ik deze reeds slice via mijn settigns vandaar.
 De vorige print die ontvangen werd via het school had enige defecten zoals het warpen van de grote onderdelen als ook het niet mooi afwerken van openvlaktes. 
-Wat mij ook opviel bij de prints van school is dat deze op elk aspect toch enkele mms te groot uitvielen heb geen idee wat hiervan de reden zou kunnen zijn.
+Wat me ook opviel bij de prints is dat deze op elk aspect toch enkele mms te groot uitvielen heb geen idee wat hiervan de reden zou kunnen zijn. (bij het printen thuis had ik hiermee niet direct een probleem)
 
 
-Naam stl						kleur			printer			aantal
+Naam stl						kleur			printer			aantal		opmerking
 
-Houderpi 						gelijk 			gelijk			1
+Houderpi 						gelijk 			gelijk			1		bij het gebruiken van de stl gelieve te zorgen dat de ribbel loodrecht light t.o.v. de build plate
 
 Led behuizing dubbele hoogte				Wit			ender-3 S1 PLUS		1
 
