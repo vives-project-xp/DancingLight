@@ -1,6 +1,7 @@
 import pyaudio
 import numpy as np
 import time
+import os
 
 # Function to calculate the frequency
 def calculate_frequency(signal, sample_rate):
@@ -13,8 +14,8 @@ def calculate_frequency(signal, sample_rate):
 p = pyaudio.PyAudio()
 
 # Audio settings
-sample_rate = 30000  # Adjust to your desired sample rate
-chunk_size = 512
+sample_rate = 44099  # Adjust to your desired sample rate
+chunk_size = 1024
 
 # Create an audio input stream
 stream = p.open(format=pyaudio.paInt16, channels=1, rate=sample_rate, input=True,
@@ -27,8 +28,13 @@ try:
     
     while time.time() - start_time < runtime:
         # Read audio from the microphone
-        audio_data = np.frombuffer(stream.read(chunk_size), dtype=np.int16)
-        
+        try:
+            audio_data = np.frombuffer(stream.read(chunk_size), dtype=np.int16)
+        except:
+            print("overflow Erra");
+            stream = p.open(format=pyaudio.paInt16, channels=1, rate=sample_rate, input=True,
+                frames_per_buffer=chunk_size)
+            continue
         # Calculate the frequency
         frequency = calculate_frequency(audio_data, sample_rate)
         
