@@ -7,6 +7,7 @@ import time
 from math import log10
 import audioop  
 import sys
+import datetime
 
 p = pyaudio.PyAudio()
 WIDTH = 2
@@ -41,15 +42,40 @@ ORDER = neopixel.GRBW
 pixels = neopixel.NeoPixel(pixel_pin, num_pixels, auto_write=False, pixel_order=ORDER)
 GPIO.setup(Pin, GPIO.IN)
 
+minste = 0
+meeste = 1
+recentmeeste = 0
+recentminste = 0
+nieuwcheckinterval = datetime.datetime.now() + datetime.timedelta(0,5)	#5 seconden vanaf nu
+
 while stream.is_active(): 
-	db = 20 * log10(rms)#db gaat van -40 tot 0 somehow op dit apparaa
-	filled_progbar  = round(((db+40)/40)*255)
+	db = 20 * log10(rms)#db gaat van -40 tot 0 somehow op dit apparaat
+	positf = ((db+40))
+	if(positf<minste):
+		minste = positf
+		print("nieuw kleinste:",minste)
+	if(positf>meeste):	#er is een bug waarbij positif 40 is bij eerste iteratie, ook is 40 de maximuum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
+		if positf == 40:
+			positf = meeste
+		meeste = positf
+		print("nieuw hoogste:", meeste)
+	if(positf<recentminste):
+		recentminste = positf
+	if(positf>recentmeeste):	#er is een bug waarbij positif 40 is bij eerste iteratie, ook is 40 de maximuum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
+		if positf == 40:
+			positf = recentmeeste
+		recentmeeste = positf
+	if(datetime.datetime.now() > nieuwcheckinterval):
+		print("nieuwe max-min:",recentmeeste,"-",recentminste)
+		meeste = recentmeeste
+		minste = recentminste
+		nieuwcheckinterval = datetime.datetime.now() + datetime.timedelta(0,5)
+		recentminste = positf
+		recentmeeste = positf
+	filled_progbar  = round((positf-minste)/(meeste-minste)*255)
     
 	pixels.fill((filled_progbar,filled_progbar,filled_progbar))
 	pixels.show()
-
-pixels.fill((0,0,0))
-pixels.show()
 
 stream.stop_stream()
 stream.close()
