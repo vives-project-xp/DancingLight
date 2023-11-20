@@ -1,9 +1,6 @@
 # Dancing Light
-
 ## Content
-
 <ul>
-    <li>Introduction</li>
     <li>Project explained</li>
     <li>Hardware</li>
     <li>Software</li>
@@ -14,7 +11,6 @@
     <li>License and author info</li>
 </ul>
 
-## Introduction
 ## Project explained
 
 The dancing light project will make LED's react to music.
@@ -150,7 +146,8 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 
 ## Future changes
 1. Adding more boxes
-2. ...
+2. More effects
+3. ...
 
 ## BOM
 
