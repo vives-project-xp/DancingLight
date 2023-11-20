@@ -3,3 +3,13 @@ Specifiek nodig voor ons led script nu:
 -rpi-ws281x
 -paho-mqtt //sudo apt-get install python3-paho-mqtt
 -pyaudio
+
+Andere libraries:
+
+-RPi.GPIO
+-Time
+-Board
+-Math
+-Audioop
+-Sys
+-Datetime
