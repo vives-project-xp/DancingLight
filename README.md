@@ -28,8 +28,11 @@ Taking the entire casing into a count it exists out of four different parts. The
 
 ## Effects
 1. Audioreact
+    a. LedsmeDB.py (Gets brighter based on the decibels)
+    b. Uitbreidreactie.py (Leds lighten up on a scale red - green - blue based on decibels)
 2. Rainbow
-3. Twolights
+3. TwoColors
+The red part simulates box 1 while the green part simulates the second box connected with one of the connectors.
 <img src="./Images/twolight.jpg" alt="2lights" width=600px>
 
 ## Hardware
