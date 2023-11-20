@@ -46,10 +46,10 @@ kleurlevels = [(20,20,20),(50,20,20),(140,20,20),(255,20,20),(20,50,20),(20,140,
 while stream.is_active(): 
 	db = 20 * log10(rms)#db goes from -40 till 0
 	geluidIndexMidden = round(((db+40)/10)%1*11)-1#from -1 till 10
-	#print(geluidIndexMidden)
+	
 	for j in range(3):
 		color = (0,0,0)
-		#print(geluidIndexMidden-j)
+		
 		if geluidIndexMidden-j >= 0 and geluidIndexMidden-j < 10:
 			color = kleurlevels[geluidIndexMidden-j]
 		for i in range(8):
