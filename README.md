@@ -112,7 +112,7 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 3. Searching code for the microphone
 4. Integrating the hardware to the Raspberry
 
-- ### Elias (Netwerken)
+- ### Elias (Networks)
 
 1. Looking for power supply solution
 2. Case design
