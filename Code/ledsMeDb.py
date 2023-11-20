@@ -34,7 +34,7 @@ stream.start_stream()
 
 
 
-# Configure the Neopixel ring
+# Configuration the Neopixel ring
 num_pixels = 120
 pixel_pin = board.D18
 Pin = 12
@@ -49,12 +49,12 @@ recentminste = 0
 nieuwcheckinterval = datetime.datetime.now() + datetime.timedelta(0,5)	#5 seconden vanaf nu
 
 while stream.is_active(): 
-	db = 20 * log10(rms)#db gaat van -40 tot 0 somehow op dit apparaat
+	db = 20 * log10(rms)#db goes from -40 till 0 on this device
 	positf = ((db+40))
 	if(positf<minste):
 		minste = positf
 		print("new lowest:",minste)
-	if(positf>meeste):	#er is een bug waarbij positif 40 is bij eerste iteratie, ook is 40 de maximuum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
+	if(positf>meeste):	#er is een bug waarbij positif 40 is bij eerste iteratie, ook is 40 de maximuum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen.
 		if positf == 40:
 			positf = meeste
 		meeste = positf

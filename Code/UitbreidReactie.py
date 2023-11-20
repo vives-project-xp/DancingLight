@@ -33,7 +33,7 @@ stream.start_stream()
 
 
 
-# Configure the Neopixel ring
+# Configuration the Neopixel ring
 num_pixels = 120
 pixel_pin = board.D18
 Pin = 12
@@ -42,10 +42,10 @@ pixels = neopixel.NeoPixel(pixel_pin, num_pixels, auto_write=False, pixel_order=
 GPIO.setup(Pin, GPIO.IN)
 
 kleurlevels = [(20,20,20),(50,20,20),(140,20,20),(255,20,20),(20,50,20),(20,140,20),(20,255,20),(20,20,50),(20,20,140),(20,20,255)]#10 levels in totaal
-#oke we zitten met een matrix van 8x4
+#Matrix 8x4
 while stream.is_active(): 
-	db = 20 * log10(rms)#db gaat van -40 tot 0 somehow op dit apparaat
-	geluidIndexMidden = round(((db+40)/10)%1*11)-1#van -1 tot 10
+	db = 20 * log10(rms)#db goes from -40 till 0
+	geluidIndexMidden = round(((db+40)/10)%1*11)-1#from -1 till 10
 	#print(geluidIndexMidden)
 	for j in range(3):
 		color = (0,0,0)
