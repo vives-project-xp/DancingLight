@@ -53,12 +53,12 @@ while stream.is_active():
 	positf = ((db+40))
 	if(positf<minste):
 		minste = positf
-		print("nieuw kleinste:",minste)
+		print("new lowest:",minste)
 	if(positf>meeste):	#er is een bug waarbij positif 40 is bij eerste iteratie, ook is 40 de maximuum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
 		if positf == 40:
 			positf = meeste
 		meeste = positf
-		print("nieuw hoogste:", meeste)
+		print("new highest:", meeste)
 	if(positf<recentminste):
 		recentminste = positf
 	if(positf>recentmeeste):	#er is een bug waarbij positif 40 is bij eerste iteratie, ook is 40 de maximuum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
