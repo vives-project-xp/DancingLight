@@ -101,7 +101,6 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 3. MQTT
 4. Issue management
 
-
 - ### Seraphin (Software & ai)
 
 1. Software testing (Making a LED strip function as we want with the rasberry pi 4)
@@ -149,6 +148,7 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 6. Case connection (important)
 
 ## Future changes
+
 1. Adding more boxes
 2. ...
 
@@ -167,6 +167,7 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 Totaal: €151.16
 
 ## Sources
+
 Github: https://github.com/vives-project-xp/DancingLight
 
 ## License and author info
