@@ -14,7 +14,7 @@ def calculate_frequency(signal, sample_rate):
 p = pyaudio.PyAudio()
 
 # Audio settings
-sample_rate = 44099  # Adjust to your desired sample rate
+sample_rate = 44100  # Adjust to your desired sample rate
 chunk_size = 1024
 
 # Create an audio input stream
