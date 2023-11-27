@@ -129,17 +129,19 @@ Inventor gives the ability to make 3D designs for making this project possible. 
 
 - ### Mirko (Software & ai + Scrum master)
 
-1. Software testing (Making a LED strip function as we want with the Raspberry Pi 4)
+1. Software testing (Making a LED strip function like we want with the Raspberry Pi 4)
 2. Searching code
 3. Issue management
 4. MQTT
+5. Coding effects
 
 - ### Seraphin (Software & ai)
 
-1. Software testing (Making a LED strip function as we want with the Raspberry Pi 4)
+1. Software testing (Making a LED strip function like we want with the Raspberry Pi 4)
 2. Searching code
 3. Rasberry configuration
 4. MQTT
+5. Coding effects
 
 - ### William (Software & ai)
 
@@ -161,6 +163,7 @@ Inventor gives the ability to make 3D designs for making this project possible. 
 1. README documentation
 2. Searching code
 3. Coding to read mp3 file (and sound based effects)
+4. Coding effects
 
 - ### Planning
 
