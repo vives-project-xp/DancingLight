@@ -7,7 +7,7 @@
     <li>Who does what?</li>
     <li>Future changes</li>
     <li>Bill Of Materials</li>
-    <li>Sources</li>
+    <li>Links</li>
     <li>License and author info</li>
 </ul>
 
@@ -61,8 +61,12 @@ Our projects requires the following hardware and materials to be constructed (li
 6. Geluidssensor
 <br>
 <img src="./Images/Geluidssensor.webp" alt="Geluidssensor" width=300px>
+(Dropped due to low sensitivity, could also only be connected to digital gpio pins. This way we had to work with a specific value to work around and can also only play an effect when this value is exceeded)
 
-7. Casing 3D print
+7. USB-microfoon
+<img src="./Images/usbmic.jpg" alt="usb" width=300px>
+
+8. Casing 3D print
 
 ## Software
 
@@ -162,10 +166,9 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 |Mic|1|[€7.11](https://www.amazon.nl/Audio-opnemen-USB-microfoon-omnidirectioneel-Skype-chatten/dp/B08BFHSLGV/ref=sr_1_5?__mk_nl_NL=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2LOMGXB9RSJ61&keywords=fasient%2BUSB-pc-microfoon&qid=1697532932&sprefix=fasient%2Busb-pc-microfoon%2Caps%2C160&sr=8-5&th=1)|
 | 3D printing | 1 | €4 (voorbehouden) |
 
+Totaal: €158.27 (exclusief 3D print)
 
-Totaal: €158.27
-
-## Sources
+## Links
 
 Github: https://github.com/vives-project-xp/DancingLight
 
