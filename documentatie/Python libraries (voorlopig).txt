@@ -13,4 +13,3 @@ Andere libraries:
 -Audioop
 -Sys
 -Datetime
--rpi_ws281x
