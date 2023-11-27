@@ -34,17 +34,19 @@ The red part simulates box 1 while the green part simulates the second box conne
 
 ## Hardware
 
-Our projects requires the following hardware and materials to be constructed (links included in BOM):
+Our projects requires the following hardware and materials to be constructed (links and pricing included in BOM list):
 <hr>
 
 1. Raspberry Pi 4
 <br>
 <img src="./Images/RasberryPi4.jpg" alt="rp4" width=300px>
 <img src="./Images/rasberrypins.png" alt="rp4" width=300px>
+We use a rasberry pi 4 to code our project, this is a powerfull way in which we can include many different effects.
 
 2. Stekkeradapter 5V 10A
 <br>
 <img src="./Images/Stekkeradapter.jpg" alt="stekkeradapter" width=300px>
+Of course the rasberry pi 4 needs power to work, for that we use this adapter.
 
 3. Adapter -> DC
 <br>
@@ -53,6 +55,7 @@ Our projects requires the following hardware and materials to be constructed (li
 4. 3Pin Connector
 <br>
 <img src="./Images/3Pin.jpg" alt="3Pin" width=300px>
+To connect LED strips we use these connectors, which can easily connect LED strips to eachother by just plugging one end into another. 
 
 5. Ledstrip 5V
 <br>
@@ -61,11 +64,11 @@ Our projects requires the following hardware and materials to be constructed (li
 6. Geluidssensor
 <br>
 <img src="./Images/Geluidssensor.webp" alt="Geluidssensor" width=300px>
-(Dropped due to low sensitivity, could also only be connected to digital gpio pins. This way we had to work with a specific value to work around and can also only play an effect when this value is exceeded)<br>
+Dropped due to low sensitivity, could also only be connected to digital gpio pins. This way we had to work with a specific value to work around and can also only play an effect when this value is exceeded<br><br>
 
 7. USB-microfoon
 <img src="./Images/usbmic.jpg" alt="usb" width=300px>
-(We chose to use a different approach by using this usb mic to be able to take in analog input to create effects based on the strength of the sound. With some calculations found online we can determine the decibel rate of the sound. This mic is way more sensitive to sound, even lighting up from silent sounds far away (depending on the chosen value of course))
+We chose to use a different approach by using this usb mic to be able to take in analog input to create effects based on the strength of the sound. With some calculations found online we can determine the decibel rate of the sound. This mic is way more sensitive to sound, even lighting up from silent sounds far away (depending on the chosen value of course)<br><br>
 
 8. Casing 3D print
 
