@@ -10,4 +10,5 @@ dit zijn alle effecten via mqtt:
 "off"
 "rainbow"
 (later maken we nog een effect die de rgb topicks uitleest):
-"vlakKleur"
+"rgbKleur"
+#rgb waarde is altijd gesplitst met komma anders werkt het niet
