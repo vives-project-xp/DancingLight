@@ -41,12 +41,12 @@ Our projects requires the following hardware and materials to be constructed (li
 <br>
 <img src="./Images/RasberryPi4.jpg" alt="rp4" width=300px>
 <img src="./Images/rasberrypins.png" alt="rp4" width=300px>
-We use a rasberry pi 4 to code our project, this is a powerfull way in which we can include many different effects.
+We use a rasberry pi 4 to code our project, this is a powerfull way in which we can include many different effects.<br><br>
 
 2. Stekkeradapter 5V 10A
 <br>
 <img src="./Images/Stekkeradapter.jpg" alt="stekkeradapter" width=300px>
-Of course the rasberry pi 4 needs power to work, for that we use this adapter.
+Of course the rasberry pi 4 needs power to work, for that we use this adapter.<br><br>
 
 3. Adapter -> DC
 <br>
@@ -55,7 +55,7 @@ Of course the rasberry pi 4 needs power to work, for that we use this adapter.
 4. 3Pin Connector
 <br>
 <img src="./Images/3Pin.jpg" alt="3Pin" width=300px>
-To connect LED strips we use these connectors, which can easily connect LED strips to eachother by just plugging one end into another. 
+To connect LED strips we use these connectors, which can easily connect LED strips to eachother by just plugging one end into another. <br><br>
 
 5. Ledstrip 5V
 <br>
@@ -167,7 +167,7 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 | Adapter omvormer | 1 | [€9.02](https://www.amazon.nl/Poppstar-Adapter-5x2-Connectors-CCTV-camera/dp/B084RHH8LC/ref=sr_1_34?__mk_nl_NL=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=V9PER2XBYZ4R&keywords=adapter%2Bto%2Bdc%2Bconnector%2B5.5mm%2Bx%2B2.5mm&qid=1696238739&sprefix=adapter%2Bto%2Bdc%2Bconnector%2B5.5mm%2Bx%2B2.5mm%2Caps%2C59&sr=8-34&th=1) |
 | 3Pin Connector | 1 | [€9.99](https://www.amazon.nl/HUAZIZ-vrouwelijk-mannelijke-vrouwelijke-elektrische/dp/B0BPP87N9G/ref=sr_1_5?crid=11ONOETG871I1&keywords=3+pin+connector&qid=1696237070&sprefix=3+pin+connec%2Caps%2C281&sr=8-5) |
 |Raspberry Pi |1|[€86.17](https://www.amazon.nl/Raspberry-Pi-ARM-Cortex-A72-Bluetooth-Micro-HDMI/dp/B07TC2BK1X/ref=sr_1_6?crid=UVXPOXO03958&keywords=raspberry%2Bpi%2B4&qid=1696238540&sprefix=raspberyr%2Caps%2C434&sr=8-6&th=1)|
-|Mic|1|[€7.11](https://www.amazon.nl/Audio-opnemen-USB-microfoon-omnidirectioneel-Skype-chatten/dp/B08BFHSLGV/ref=sr_1_5?__mk_nl_NL=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2LOMGXB9RSJ61&keywords=fasient%2BUSB-pc-microfoon&qid=1697532932&sprefix=fasient%2Busb-pc-microfoon%2Caps%2C160&sr=8-5&th=1)|
+|USB Microfoon|1|[€7.11](https://www.amazon.nl/Audio-opnemen-USB-microfoon-omnidirectioneel-Skype-chatten/dp/B08BFHSLGV/ref=sr_1_5?__mk_nl_NL=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2LOMGXB9RSJ61&keywords=fasient%2BUSB-pc-microfoon&qid=1697532932&sprefix=fasient%2Busb-pc-microfoon%2Caps%2C160&sr=8-5&th=1)|
 | 3D printing | 1 | €4 (voorbehouden) |
 
 Totaal: €158.27 (exclusief 3D print)
