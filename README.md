@@ -65,6 +65,7 @@ Our projects requires the following hardware and materials to be constructed (li
 
 7. USB-microfoon
 <img src="./Images/usbmic.jpg" alt="usb" width=300px>
+(We chose to use a different approach by using this usb mic to be able to take in analog input to create effects based on the strength of the sound. With some calculations found online we can determine the decibel rate of the sound. This mic is way more sensitive to sound, even lighting up from silent sounds far away (depending on the chosen value of course))
 
 8. Casing 3D print
 
