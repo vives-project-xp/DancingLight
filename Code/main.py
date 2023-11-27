@@ -10,11 +10,15 @@ import audioop
 import pyaudio
 import queue
 
+time.sleep(15)
+
 t1 = threading.Thread()
 messages = queue.Queue()
+messages.put("ledsMeDbRGB")
 booleans = [False, True]#running, stoped
-rgb = [0,0,0]
-rgb2 = [0,0,0]
+rgb = [0,255,80]
+rgb2 = [0,255,80]
+laatsteEffect = ["ledsMeDbRGB"]
 mqttfile = open("/mqttCred.conf","r")
 configuratie = mqttfile.readlines()
 effecttopic = configuratie[9][0:len(configuratie[9])-1]
@@ -26,10 +30,11 @@ def on_message(client, userdata, message):
     bericht = str(message.payload.decode("utf-8"))
     if(message.topic==effecttopic):
         messages.put(bericht)
+        laatsteEffect[0] = bericht
     if(message.topic==commandtopic):
-        if(bericht != "ON"):
-            #messages.put("rainbow")	#loop starten die door alle effecten loopt
-        #elif(bericht == "OFF"):
+        if(bericht == "ON"):
+            messages.put(laatsteEffect[0])
+        elif(bericht == "OFF"):
             messages.put("off")
     if(message.topic == rgbtopic):
         dat = bericht.split(',')
@@ -136,10 +141,6 @@ def rainbow():
             break
     booleans[1] = True
 
-def allLights():
-    pixels.fill(kleuren[0])
-    booleans[1] = True
-
 def anyColor(r, g, b, r2, g2, b2):
     print(r, g, b, r2, g2, b2)
     for i in range(0, int(num_pixels/2)):
@@ -174,7 +175,7 @@ def pulseColor(r, g, b):
             break
     booleans[1] = True
 
-def ledsMeDbRGB():
+def ledsMeDbFlikker():
     minste = 0
     meeste = 1
     stream.start_stream()
@@ -262,6 +263,46 @@ def ledsMeDb():
         filled_progbar  = round((positf-minste)/(meeste-minste)*255)
         
         pixels.fill((filled_progbar,filled_progbar,filled_progbar))
+        pixels.show()
+        if(booleans[0] == False):
+            break
+    stream.stop_stream()
+    booleans[1] = True
+    
+def ledsMeDbRGB():
+    stream.start_stream()
+    minste = 0
+    meeste = 1
+    recentmeeste = 0
+    recentminste = 0
+    nieuwcheckinterval = datetime.datetime.now() + datetime.timedelta(0,5)
+    while stream.is_active(): 
+        db = 20 * log10(rms)#db gaat van -40 tot 0 somehow op dit apparaat
+        positf = ((db+40))
+        if(positf<minste):
+            minste = positf
+            print("nieuw kleinste:",minste)
+        if(positf>meeste):	#er is een bug waarbij positif 40 is bij eerste iteratie, ook is 40 de maximuum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
+            if positf == 40:
+                positf = meeste
+            meeste = positf
+            print("nieuw hoogste:", meeste)
+        if(positf<recentminste):
+            recentminste = positf
+        if(positf>recentmeeste):	#er is een bug waarbij positif 40 is bij eerste iteratie, ook is 40 de maximuum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
+            if positf == 40:
+                positf = recentmeeste
+            recentmeeste = positf
+        if(datetime.datetime.now() > nieuwcheckinterval):
+            print("nieuwe max-min:",recentmeeste,"-",recentminste)
+            meeste = recentmeeste
+            minste = recentminste
+            nieuwcheckinterval = datetime.datetime.now() + datetime.timedelta(0,5)
+            recentminste = positf
+            recentmeeste = positf
+        filled_progbar  = round((positf-minste)/(meeste-minste)*15)
+        
+        pixels.fill(((rgb[0]/15)*filled_progbar,(rgb[1]/15)*filled_progbar,(rgb[2]/15)*filled_progbar))
         pixels.show()
         if(booleans[0] == False):
             break
@@ -402,28 +443,23 @@ try:
                 booleans[0] = True
                 booleans[1] = False
                 t1.start()
-            if bericht == "bubbelKleur":
-                t1 = threading.Thread(target=anyColor, kwargs={"r":98,"g":1,"b":1,"r2":2,"g2":1,"b2":145})
-                booleans[0] = True
-                booleans[1] = False
-                t1.start()
             if bericht == "rgbKleur":
                 t1 = threading.Thread(target=rgbKleur)
                 booleans[0] = True
                 booleans[1] = False
                 t1.start()
-            if bericht == "allLights":
-                t1 = threading.Thread(target=allLights)
-                booleans[0] = True
-                booleans[1] = False
-                t1.start()
-            if bericht == "ledsMeDbRGB":
-                t1 = threading.Thread(target=ledsMeDbRGB)
+            if bericht == "ledsMeDbFlikker":
+                t1 = threading.Thread(target=ledsMeDbFlikker)
                 booleans[0] = True
                 booleans[1] = False
                 t1.start()
             if bericht == "ledsMeDb":
                 t1 = threading.Thread(target=ledsMeDb)
+                booleans[0] = True
+                booleans[1] = False
+                t1.start()
+            if bericht == "ledsMeDbRGB":
+                t1 = threading.Thread(target=ledsMeDbRGB)
                 booleans[0] = True
                 booleans[1] = False
                 t1.start()
