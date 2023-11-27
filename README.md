@@ -90,9 +90,15 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 
 3. MQTT met project master:
 
-MQTT gives us the ability to connect with the project master. What makes it possible to send the effects from a central device to the differejt projects.
+MQTT gives us the ability to connect with the project master. Which makes it possible to send the effects from a central device to the different projects.
 <br>
 <img src="./Images/mqtt Client.png" alt="mqtt" width=600px>
+
+4. Autodesk Inventor Professional 2021:
+
+Inventor gives the ability to make 3D designs for making this project possible. This program also makes it easy to convert the 3D designs to STL files for 3D printing. 
+<br>
+<img src="./Images/Inventor.JPG" alt="mqtt" width=600px>
 
 ## Who does/did what?
 
