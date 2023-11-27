@@ -9,12 +9,29 @@ import audioop
 import sys
 import datetime
 
+time.sleep(5)
+
+file1 = open("test.txt", "w")
+file1.write("ni...")
+file1.close()
+
+
+def getaudiodevices():
+    p = pyaudio.PyAudio()
+    for i in range(p.get_device_count()):
+        return i
+    print("geen input device ):")
+    return null
+
 p = pyaudio.PyAudio()
 WIDTH = 2
 RATE = int(p.get_default_input_device_info()['defaultSampleRate'])
-DEVICE = p.get_default_input_device_info()['index']
+#DEVICE = p.get_default_input_device_info()['index']
+DEVICE =  getaudiodevices()
 rms = 1
 print(p.get_default_input_device_info())
+
+
 
 def callback(in_data, frame_count, time_info, status):
     global rms
@@ -34,7 +51,7 @@ stream.start_stream()
 
 
 
-# Configuration the Neopixel ring
+# Configure the Neopixel ring
 num_pixels = 120
 pixel_pin = board.D18
 Pin = 12
@@ -49,16 +66,16 @@ recentminste = 0
 nieuwcheckinterval = datetime.datetime.now() + datetime.timedelta(0,5)	#5 seconden vanaf nu
 
 while stream.is_active(): 
-	db = 20 * log10(rms)#db goes from -40 till 0 on this device
+	db = 20 * log10(rms)#db gaat van -40 tot 0 somehow op dit apparaat
 	positf = ((db+40))
 	if(positf<minste):
 		minste = positf
-		print("new lowest:",minste)
-	if(positf>meeste):	#er is een bug waarbij positif 40 is bij eerste iteratie, ook is 40 de maximuum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen.
+		print("nieuw kleinste:",minste)
+	if(positf>meeste):	#er is een bug waarbij positif 40 is bij eerste iteratie, ook is 40 de maximuum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
 		if positf == 40:
 			positf = meeste
 		meeste = positf
-		print("new highest:", meeste)
+		print("nieuw hoogste:", meeste)
 	if(positf<recentminste):
 		recentminste = positf
 	if(positf>recentmeeste):	#er is een bug waarbij positif 40 is bij eerste iteratie, ook is 40 de maximuum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen

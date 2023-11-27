@@ -1,0 +1,13 @@
+dit zijn alle effecten via mqtt:
+(geen rekening met de rgb topic)
+"MiddenBounce"
+"uitbreidReactie"
+"vlakMuziek"
+"ledsMeDb"
+"ledsMeDbRGB"
+"allLights"
+"bubbelKleur"
+"off"
+"rainbow"
+(later maken we nog een effect die de rgb topicks uitleest):
+"vlakKleur"
