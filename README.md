@@ -72,7 +72,7 @@ Our projects requires the following hardware and materials to be constructed (li
 
 1. [VNC Viewer](https://www.realvnc.com/en/connect/download/viewer/):
 
-This is the software we used to program the Raspberry Pi 4. It's easy to set up after installing. An advantage of this software is the ability to work on the same project at the same time. Whenever one person changes something all other members see the changes on their own device live.
+This is the software we used to program the Raspberry Pi 4. It's easy to set up after installing. An advantage of this software is the ability to work on the same project at the same time. Whenever one person changes something all other members see the changes on their own device live. <br>
 
 <img src="./Images/VNC Coding.png" alt="vnc" width=600px>
 
