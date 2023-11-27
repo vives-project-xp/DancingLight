@@ -10,4 +10,5 @@ Specifiek nodig voor ons led script nu:
 -Audioop
 -Sys
 -Datetime
+-Os
 -rpi_ws281x
