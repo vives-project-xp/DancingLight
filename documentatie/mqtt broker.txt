@@ -5,8 +5,7 @@ dit zijn alle effecten via mqtt:
 "vlakMuziek"
 "ledsMeDb"
 "ledsMeDbRGB"
-"allLights"
-"bubbelKleur"
+"ledsMeDbFlikker"
 "off"
 "rainbow"
 (later maken we nog een effect die de rgb topicks uitleest):
