@@ -10,7 +10,7 @@ def calculate_frequency(signal, sample_rate):
     frequency = np.argmax(magnitude) * sample_rate / len(signal)
     return frequency
 
-# Initialization of PyAudio
+# Initialization of PyAudio 
 p = pyaudio.PyAudio()
 
 # Audio settings
@@ -63,3 +63,5 @@ p.terminate()
 # Close Matplotlib
 plt.ioff()
 plt.show()
+
+

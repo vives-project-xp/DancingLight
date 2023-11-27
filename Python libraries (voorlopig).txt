@@ -1,0 +1,13 @@
+Specifiek nodig voor ons led script nu:
+-adafruit-circuitpython-neopixel
+-rpi-ws281x
+-paho-mqtt //sudo apt-get install python3-paho-mqtt
+-pyaudio
+-RPi.GPIO
+-Time
+-Board
+-Math
+-Audioop
+-Sys
+-Datetime
+-rpi_ws281x

@@ -8,9 +8,10 @@ import datetime
 from math import log10
 import audioop
 import pyaudio
+import queue
 
 t1 = threading.Thread()
-messages = []
+messages = queue.Queue()
 booleans = [False, True]#running, stoped
 rgb = [0,0,0]
 rgb2 = [0,0,0]
@@ -24,24 +25,24 @@ rgbtopic2 = configuratie[15][0:len(configuratie[15])-1]
 def on_message(client, userdata, message):
     bericht = str(message.payload.decode("utf-8"))
     if(message.topic==effecttopic):
-        messages.append(bericht)
+        messages.put(bericht)
     if(message.topic==commandtopic):
-        if(bericht == "ON"):
-            messages.append("rainbow")	#loop starten die door alle effecten loopt
-        elif(bericht == "OFF"):
-            messages.append("off")
+        if(bericht != "ON"):
+            #messages.put("rainbow")	#loop starten die door alle effecten loopt
+        #elif(bericht == "OFF"):
+            messages.put("off")
     if(message.topic == rgbtopic):
         dat = bericht.split(',')
         for i in range(3):
             try:
-                rgb[i] = int(dat[i])
+                rgb[i] = int(dat[i])%256 #om binnen 0-255 te blijven
             except:
                 print("error data")
     if(message.topic == rgbtopic2):
         dat = bericht.split(',')
         for i in range(3):
             try:
-                rgb2[i] = int(dat[i])
+                rgb2[i] = int(dat[i])%256
             except:	
                 print("error data")
     print(message.topic,bericht)
@@ -147,6 +148,19 @@ def anyColor(r, g, b, r2, g2, b2):
     for i in range(int(num_pixels/2), num_pixels):
         pixels[i] = (r2, g2, b2)
     pixels.show()
+    booleans[1] = True
+    
+def rgbKleur():
+    while(True):
+        for i in range(0, int(num_pixels/2)):
+            pixels[i] = (rgb[0], rgb[1], rgb[2])
+        
+        for i in range(int(num_pixels/2), num_pixels):
+            pixels[i] = (rgb2[0], rgb2[1], rgb2[2])
+        pixels.show()
+        time.sleep(1)
+        if(booleans[0]==False):
+            break;
     booleans[1] = True
 
 def pulseColor(r, g, b):
@@ -368,9 +382,9 @@ client.subscribe([(effecttopic,0),(rgbtopic,0),(commandtopic,0),(rgbtopic2,0)])
 try:
     while True:
         time.sleep(1)
-        print("lengte list " + str(len(messages)))
-        if(len(messages)>0):
-            bericht = messages.pop()
+        print("lengte list " + str(messages.qsize()))
+        if (messages.qsize()>0):
+            bericht = messages.get()
             print("Message received: "  + bericht+ "; booleans[1]=",booleans[1])
             booleans[0] = False
             if booleans[1] == False:
@@ -394,7 +408,7 @@ try:
                 booleans[1] = False
                 t1.start()
             if bericht == "rgbKleur":
-                t1 = threading.Thread(target=anyColor, kwargs={"r":int(rgb[0]),"g":int(rgb[1]),"b":int(rgb[2]),"r2":int(rgb2[0]),"g2":int(rgb2[1]),"b2":int(rgb2[2])})
+                t1 = threading.Thread(target=rgbKleur)
                 booleans[0] = True
                 booleans[1] = False
                 t1.start()
