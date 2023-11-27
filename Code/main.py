@@ -321,11 +321,14 @@ def MiddenBounce():
     booleans[1] = True
 
 Connected = False   #global variable for the state of the connection
+mqttfile = open("mqttCred.conf","r")
+configuratie = mqttfile.readlines()
   
-broker_address= "test.mosquitto.org" #"projectmaster.devbit.be"  #Broker address
-port = 1883               #Broker port
-user = ""#            #plaats dit in de repo zonder wachtwoorden
-password = ""#          #Connection password
+broker_address= configuratie[3][0:len(configuratie[3])-1] #"projectmaster.devbit.be"  #Broker address
+port =int(configuratie[1])               #Broker port
+print(port)
+user = configuratie[5][0:len(configuratie[5])-1]#            #plaats dit in de repo zonder wachtwoorden
+password = configuratie[7][0:len(configuratie[7])-1]#          #Connection password
   
 client = mqttClient.Client("phillips")               #create new instance
 client.username_pw_set(user, password=password)    #set username and password
@@ -339,7 +342,7 @@ client.loop_start()        #start the loop
 while Connected != True:    #Wait for connection
     time.sleep(0.1)
   
-client.subscribe("sigma")
+client.subscribe(configuratie[9][0:len(configuratie[9])-1])
   
 try:
     while True:
