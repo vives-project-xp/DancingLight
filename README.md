@@ -94,7 +94,7 @@ MQTT gives us the ability to connect with the project master. Which makes it pos
 <br>
 <img src="./Images/mqtt Client.png" alt="mqtt" width=600px>
 
-4. Autodesk Inventor Professional 2021:
+4. [Autodesk Inventor Professional 2021](https://www.autodesk.com/products/inventor/overview?term=1-YEAR&tab=subscription):
 
 Inventor gives the ability to make 3D designs for making this project possible. This program also makes it easy to convert the 3D designs to STL files for 3D printing. 
 <br>
@@ -114,54 +114,59 @@ Inventor gives the ability to make 3D designs for making this project possible. 
 
 1. Software testing (Making a LED strip function as we want with the rasberry pi 4)
 2. Searching code
-3. MQTT
-4. Issue management
+3. Issue management
+
 
 - ### Seraphin (Software & ai)
 
 1. Software testing (Making a LED strip function as we want with the rasberry pi 4)
 2. Searching code
 3. Rasberry configuration
+4. MQTT
 
 - ### William (Software & ai)
 
 1. Poster design
 2. Presentation
 3. Searching code for the microphone
-4. Integrating the hardware to the Raspberry
+
 
 - ### Elias (Networks)
 
 1. Looking for power supply solution
 2. Case design
 3. Rasberry configuration
-4. Solderen
+4. Soldering
+5. Assembly 
+6. README documentation
 
 - ### Esteban (Software & ai)
 
-1. Case design
-2. README documentation
-3. Searching code
-4. Coding to read mp3 file (and sound based effects)
+1. README documentation
+2. Searching code
+3. Coding to read mp3 file (and sound based effects)
 
-- ### To be determined
+- ### Planning
 
 1. Testing product (week 7-10)/
     - Software and hardware
     - Casing (does the connection between two products work?)
         1. Top of first case was printed to thick (no light could pass)
+        2. Do we use plastic or do we 3D print see trough layer.
 2. Optimizing product:
     - Thinner top layer
     - Rasberry added to the back of the case
-3. Document finalization:
-    - README
-    - Powerpoint final presentation
-    - ...
-4. Preparing final presentation
-5. Coding:
+3. Coding:
     - LED's on sound strength
     - Template lighting for LED's (Done)
-6. Case connection (important)
+4. Case connection (important)
+5. MQTT connection (Project master)
+6. Document finalization:
+    - README
+    - Powerpoint final presentation
+    - Manage files on pi
+7. Preparing final presentation
+
 
 ## Future changes
 
