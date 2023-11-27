@@ -88,6 +88,12 @@ VNC viewer has the ability to write code in the program itself, opening the righ
 <br>
 <img src="./Images/VNCPython.png" alt="vncpy" width=600px>
 
+3. :MQTT met project master:
+
+MQTT gives us the ability to connect with the project master. What makes it possible to send the effects from a central device to the differejt projects.
+<br>
+<img src="./Images/VNCPython.png" alt="vncpy" width=600px>
+
 ## Who does/did what?
 
 - ### Global (entire group)
