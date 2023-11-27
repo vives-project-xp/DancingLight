@@ -61,7 +61,7 @@ Our projects requires the following hardware and materials to be constructed (li
 6. Geluidssensor
 <br>
 <img src="./Images/Geluidssensor.webp" alt="Geluidssensor" width=300px>
-(Dropped due to low sensitivity, could also only be connected to digital gpio pins. This way we had to work with a specific value to work around and can also only play an effect when this value is exceeded)
+(Dropped due to low sensitivity, could also only be connected to digital gpio pins. This way we had to work with a specific value to work around and can also only play an effect when this value is exceeded)<br>
 
 7. USB-microfoon
 <img src="./Images/usbmic.jpg" alt="usb" width=300px>
@@ -72,7 +72,7 @@ Our projects requires the following hardware and materials to be constructed (li
 
 1. [VNC Viewer](https://www.realvnc.com/en/connect/download/viewer/):
 
-This is the software we used to program the Raspberry Pi 4. It's easy to set up after installing. An advantage of this software is the ability to work on the same project at the same time. Whenever one person changes something all other members see the changes on their own device live. <br>
+This is the software we used to program the Raspberry Pi 4. It's easy to set up after installing. An advantage of this software is the ability to work on the same project at the same time. Whenever one person changes something all other members see the changes on their own device live.
 
 <img src="./Images/VNC Coding.png" alt="vnc" width=600px>
 
