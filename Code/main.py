@@ -12,11 +12,39 @@ import pyaudio
 t1 = threading.Thread()
 messages = []
 booleans = [False, True]#running, stoped
+rgb = [0,0,0]
+rgb2 = [0,0,0]
+mqttfile = open("/mqttCred.conf","r")
+configuratie = mqttfile.readlines()
+effecttopic = configuratie[9][0:len(configuratie[9])-1]
+rgbtopic = configuratie[11][0:len(configuratie[11])-1]
+commandtopic = configuratie[13][0:len(configuratie[13])-1]
+rgbtopic2 = configuratie[15][0:len(configuratie[15])-1]
 
 def on_message(client, userdata, message):
     bericht = str(message.payload.decode("utf-8"))
-    messages.append(bericht)
-    print(messages)
+    if(message.topic==effecttopic):
+        messages.append(bericht)
+    if(message.topic==commandtopic):
+        if(bericht == "ON"):
+            messages.append("rainbow")	#loop starten die door alle effecten loopt
+        elif(bericht == "OFF"):
+            messages.append("off")
+    if(message.topic == rgbtopic):
+        dat = bericht.split(',')
+        for i in range(3):
+            try:
+                rgb[i] = int(dat[i])
+            except:
+                print("error data")
+    if(message.topic == rgbtopic2):
+        dat = bericht.split(',')
+        for i in range(3):
+            try:
+                rgb2[i] = int(dat[i])
+            except:	
+                print("error data")
+    print(message.topic,bericht)
 
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
@@ -46,12 +74,6 @@ RATE = int(p.get_default_input_device_info()['defaultSampleRate'])
 DEVICE = p.get_default_input_device_info()['index']
 rms = 1
 print(p.get_default_input_device_info())
-
-def callback(in_data, frame_count, time_info, status):
-    global rms
-    rms = audioop.rms(in_data, WIDTH) / 32767
-    return in_data, pyaudio.paContinue
-
 
 stream = p.open(format=p.get_format_from_width(WIDTH),
     input_device_index=DEVICE,
@@ -118,6 +140,7 @@ def allLights():
     booleans[1] = True
 
 def anyColor(r, g, b, r2, g2, b2):
+    print(r, g, b, r2, g2, b2)
     for i in range(0, int(num_pixels/2)):
         pixels[i] = (r, g, b)
     
@@ -321,9 +344,7 @@ def MiddenBounce():
     booleans[1] = True
 
 Connected = False   #global variable for the state of the connection
-mqttfile = open("mqttCred.conf","r")
-configuratie = mqttfile.readlines()
-  
+
 broker_address= configuratie[3][0:len(configuratie[3])-1] #"projectmaster.devbit.be"  #Broker address
 port =int(configuratie[1])               #Broker port
 print(port)
@@ -341,9 +362,9 @@ client.loop_start()        #start the loop
   
 while Connected != True:    #Wait for connection
     time.sleep(0.1)
-  
-client.subscribe(configuratie[9][0:len(configuratie[9])-1])
-  
+
+client.subscribe([(effecttopic,0),(rgbtopic,0),(commandtopic,0),(rgbtopic2,0)])
+
 try:
     while True:
         time.sleep(1)
@@ -369,6 +390,11 @@ try:
                 t1.start()
             if bericht == "bubbelKleur":
                 t1 = threading.Thread(target=anyColor, kwargs={"r":98,"g":1,"b":1,"r2":2,"g2":1,"b2":145})
+                booleans[0] = True
+                booleans[1] = False
+                t1.start()
+            if bericht == "rgbKleur":
+                t1 = threading.Thread(target=anyColor, kwargs={"r":int(rgb[0]),"g":int(rgb[1]),"b":int(rgb[2]),"r2":int(rgb2[0]),"g2":int(rgb2[1]),"b2":int(rgb2[2])})
                 booleans[0] = True
                 booleans[1] = False
                 t1.start()
