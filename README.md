@@ -1,15 +1,17 @@
 # Dancing Light
+
 ## Content
-<ul>
-    <li>Project explained</li>
-    <li>Hardware</li>
-    <li>Software</li>
-    <li>Who does what?</li>
-    <li>Future changes</li>
-    <li>Bill Of Materials</li>
-    <li>Links</li>
-    <li>License and author info</li>
-</ul>
+
+- [Project explained](#project-explained)
+- [Effects](#effects)
+- [Hardware](#hardware)
+- [Software](#software)
+- [Who does/did what?](#who-doesdid-what)
+- [Planning](#planning)
+- [Future changes](#future-changes)
+- [BOM](#bom)
+- [Links](#links)
+- [License and author info](#license-and-author-info)
 
 ## Project explained
 
