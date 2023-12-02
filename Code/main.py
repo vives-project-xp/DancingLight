@@ -300,9 +300,8 @@ def ledsMeDbRGB():
             nieuwcheckinterval = datetime.datetime.now() + datetime.timedelta(0,5)
             recentminste = positf
             recentmeeste = positf
-        filled_progbar  = round((positf-minste)/(meeste-minste)*15)
-        
-        pixels.fill(((rgb[0]/15)*filled_progbar,(rgb[1]/15)*filled_progbar,(rgb[2]/15)*filled_progbar))
+        filled_progbar  = (positf-minste)/(meeste-minste)*16
+        pixels.fill((round((rgb[0]/16)*filled_progbar),round((rgb[0]/16)*filled_progbar),round((rgb[0]/16)*filled_progbar)))
         pixels.show()
         if(booleans[0] == False):
             break
