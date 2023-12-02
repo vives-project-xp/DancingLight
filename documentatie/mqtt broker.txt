@@ -1,13 +1,12 @@
 dit zijn alle effecten via mqtt:
-(geen rekening met de rgb topic)
+luistert niet naar rgb toppics:
 "MiddenBounce"
 "uitbreidReactie"
 "vlakMuziek"
 "ledsMeDb"
-"ledsMeDbRGB"
 "ledsMeDbFlikker"
 "off"
 "rainbow"
-(later maken we nog een effect die de rgb topicks uitleest):
+rekeninghoudend met rgb:
 "rgbKleur"
-#rgb waarde is altijd gesplitst met komma anders werkt het niet
+"ledsMeDbRGB"
