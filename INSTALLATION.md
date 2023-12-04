@@ -3,6 +3,14 @@
 ## Table of Contents
 
 - [BOM (Bill of Materials)](#bom-bill-of-materials)
+- [Installation](#installation)
+  - [Step 1: Install Raspberry Pi OS](#step-1-install-raspberry-pi-os)
+  - [Step 2: Enable VNC](#step-2-enable-vnc)
+  - [Step 3: Clone the git repository](#step-3-clone-the-git-repository)
+  - [Step 4: Install the required packages](#step-4-install-the-required-packages)
+  - [Step 5: Run the code](#step-5-run-the-code)
+  - [Step 6: Change the Effect with MQTT Explorer](#step-6-change-the-effect-with-mqtt-explorer)
+  - [Step 7: Make the program run on boot (optional)](#step-7-make-the-program-run-on-boot-optional)
 
 ## BOM (Bill of Materials)
 
