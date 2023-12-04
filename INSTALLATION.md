@@ -67,10 +67,14 @@ git clone https://github.com/vives-project-xp/DancingLight.git
 
 ### Step 4: Install the required packages
 
-To successfully run our code, you will need to install the required packages. You can do this by opening the terminal and navigating to the `DancingLight` directory. Once you are in the `DancingLight` directory, you can install the required packages with the following command:
+To successfully run our code, you will need to install the required packages. You can do this by opening the terminal and navigating to the `DancingLight` directory. Once you are in the `DancingLight` directory, you can install the required packages with the following commands:
 
 ```bash
-
+sudo apt install python3 python3-paho-mqtt python3-pyaudio libportaudio0 libportaudio2 libportaudiocpp0 portaudio19-dev
+```
+Now install some other packages with the python package manager:
+```bash
+pip3 install adafruit-circuitpython-neopixel rpi-ws281x
 ```
 
 ### Step 5: Run the code
@@ -152,12 +156,6 @@ The last change you need to make is adding this line to:
 
 ```bash
 options snd slots=snd-bcm2835,snd-usb-audio,vc4,vc4
-```
-
-If you still encounter some issues you can try to install these packages:
-
-```bash
-sudo apt-get install libportaudio0 libportaudio2 libportaudiocpp0 portaudio19-dev
 ```
 
 To make the program run on boot, you will need to run the script in rc.local
