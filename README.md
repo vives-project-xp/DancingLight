@@ -34,16 +34,16 @@ Originally we used two parts which would bridge over the Pi to provide light all
 
 ## Effects
 These are the effects supported with the MQTT broker
-1. "MiddenBounce"
-2. "uitbreidReactie"
-3. "vlakMuziek"
-4. "ledsMeDb"
-5. "ledsMeDbRGB"
-6. "allLights"
-7. "bubbelKleur"
-8. "off"
-9. "rainbow"
-10. "rgbKleur" (define the rbg value)
+<ul>
+    <li>"MiddenBounce"</li>
+    <li>"uitbreidReactie"</li>
+    <li>"vlakMuziek"</li>
+    <li>"ledsMeDb"</li>
+    <li>"ledsMeDbFlikker"</li>
+    <li>"rainbow"</li>
+    <li>"rgbKleur" (rgb effect)</li>
+    <li>"ledsMeDbRGB" (rgb effect)</li>
+</ul>
 
 ![2lights](./Images/twolight.jpg)
 
@@ -122,6 +122,12 @@ Inventor gives the ability to make 3D designs for making this project possible. 
 
 <img src="./Images/Inventor.JPG" alt="mqtt" width=600px>
 
+## How is the box build?
+WARNING: When picking the project up from the amgnet board you need to be carefull to not pull it off to quick. And brake the project also the boxes are connect with clips so be carefull when pulling the different boxes apart. 
+
+To disasemble the setup you first need to pull the boxes apart and pull out the clips inbetween of the two boxes.
+Secondly you screw off the magnets who are inserted in to the standoffs on both boxes. When the magnets are of you will be able to pull of the lid from the smaller box and you will see the leds. For the bigger boxs you will need to first screw off the spacers out of the biggerbox. These screws are pretty thight so be carefull when unscrewing them. When alle the spacer are unscrewed you will be able to pull of the lid from the bigger box with the pi and wires still attage. For the ease of use you can disconnect the wires going to the pi to get a look in the bigger box. Everything is power by the famel plug and this one is glued in place so be carefull when pulling out the lid. 
+
 ## Who does/did what?
 
 - ### Global (entire group)
@@ -153,7 +159,8 @@ Inventor gives the ability to make 3D designs for making this project possible. 
 
 1. Poster design
 2. Presentation
-3. Searching code for the microphone
+3. Searching code for the microphones
+4. Integrating hardware to the Raspberry Pi.
 
 - ### Elias (Networks)
 
@@ -163,12 +170,13 @@ Inventor gives the ability to make 3D designs for making this project possible. 
 4. Soldering
 5. Assembly
 6. README documentation
+7. README 3D
 
 - ### Esteban (Software & ai)
 
 1. README documentation
 2. Searching code
-3. Coding to read mp3 file (and sound based effects)
+3. Coding to read mp3 file (and sound visualisation script)
 4. Sound coding
 5. Coding effects
 
@@ -195,9 +203,9 @@ Inventor gives the ability to make 3D designs for making this project possible. 
 
 ## Future changes
 
-1. Adding more boxes
+1. Adding better solution for connecting the different boxes.
 2. More effects
-3. ...
+
 
 ## BOM
 
@@ -217,6 +225,7 @@ Total: €158.27 (3D printing excluded)
 ## Links
 
 Github: https://github.com/vives-project-xp/DancingLight
+Installatie instructies: https://github.com/vives-project-xp/DancingLight/blob/main/INSTALLATION.md
 
 ## License and author info
 
