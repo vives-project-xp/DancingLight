@@ -300,8 +300,8 @@ def ledsMeDbRGB():
             nieuwcheckinterval = datetime.datetime.now() + datetime.timedelta(0,5)
             recentminste = positf
             recentmeeste = positf
-        filled_progbar  = (positf-minste)/(meeste-minste)*16
-        pixels.fill((round((rgb[0]/16)*filled_progbar),round((rgb[0]/16)*filled_progbar),round((rgb[0]/16)*filled_progbar)))
+        filled_progbar  = ((positf-minste)/(meeste-minste))*16
+        pixels.fill((round((rgb[0]/16)*filled_progbar),round((rgb[1]/16)*filled_progbar),round((rgb[2]/16)*filled_progbar)))
         pixels.show()
         if(booleans[0] == False):
             break
@@ -355,6 +355,7 @@ def vlakMuziek():
     booleans[1] = True
 
 def uitbreidReactie():
+    pixels.fill((0,0,0))
     kleurlevels = [(20,20,20),(50,20,20),(140,20,20),(255,20,20),(20,50,20),(20,140,20),(20,255,20),(20,20,50),(20,20,140),(20,20,255)]#10 levels in totaal
     stream.start_stream()
     while stream.is_active(): 
