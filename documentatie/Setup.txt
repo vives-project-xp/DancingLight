@@ -1,0 +1,1 @@
+plaats "mqtt broker.txt" in de "/" map van de pi
