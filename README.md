@@ -175,7 +175,7 @@ Secondly you screw off the magnets who are inserted in to the standoffs on both 
 
 1. README documentation
 2. Searching code
-3. Coding to read mp3 file (and sound based effects)
+3. Coding to read mp3 file (and sound visualisation script)
 4. Sound coding
 5. Coding effects
 
