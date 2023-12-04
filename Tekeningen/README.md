@@ -1,7 +1,4 @@
-All the parts are made in the software inventor proffesional 2021. Al the parts are 3D printed except the stand-offs 
-
-
-
+All the parts are made in the software inventor proffesional 2021. To open the project the best to do is to open the assembly. That way you open all the parts that are needed for this project and you can see how all the parts fit togheter. In the pictures below you will see the assembly with a numbering of what the parts are/ what they do and than the naming of this part. Al the parts are 3D printed except the stand-offs and bought parts like the pi and barrel jack. 
 
 
 ![case](../Images/3D%20README_2.png)
@@ -27,5 +24,18 @@ Here is a discription of the different parts (is the name in the 3D map).
 8. spacer to make it possible to use the magnets (spacer dubbele hoogte behuizing).
 
 9. spacer without the magnets for the big box (spacer dubbele hoogte behuizing zonder magneet).
+
+![case](../Images/3D%20README_5.png)
+
+10. This is the spacer for the higher box (mangeet stand-offs16 mm).
+
+11. This is the raspberry pi (Raspberry Pi 4 Model B).
+
+12. Is the pi holder what is glued on the lid (houderpi).
+
+13. This is the merge piece who keeps the two boxes togheter (koppelstuk).
+
+
+
 
 
