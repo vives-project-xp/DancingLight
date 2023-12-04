@@ -152,7 +152,8 @@ Inventor gives the ability to make 3D designs for making this project possible. 
 
 1. Poster design
 2. Presentation
-3. Searching code for the microphone
+3. Searching code for the microphones
+4. Integrating hardware to the Raspberry Pi.
 
 - ### Elias (Networks)
 
