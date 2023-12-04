@@ -5,7 +5,7 @@
 - [Project explained](#project-explained)
 - [Effects](#effects)
 - [Hardware](#hardware)
-- [Software](#software)
+- [Software](#software) 
 - [Who does/did what?](#who-doesdid-what)
 - [Planning](#planning)
 - [Future changes](#future-changes)
@@ -28,22 +28,22 @@ With this mic we can connect it to a USB port on the Pi and make a program which
 
 Taking the entire casing into account it exists out of four different parts. The lid has some holes for air circulation and the top is printed very thin, just so the light of the LEDs is visible from the outside.
 
-At the sides a system was added to connect two cases with each other. It uses an external part to connect the sides. To ensure the same lighting in each box, we decided to add the Pi to the back of the main box. This will make it so the main box will be coming forward when compared to the other boxes when connected to for example a wall.
+At the sides a system was added to connect two cases with each other. It uses an external part to connect the sides. To ensure the same lighting in each box, we decided to add the Pi to the back of the main box. This will make it so the main box will be coming forward when compared to the other boxes when connected to for example a wall. For this proof of concept project we will make three boxes (one with raspberry and two without).
 
 Originally we used two parts which would bridge over the Pi to provide light all over the box, but this caused the issue that you could visually see the LED's on one side and only the light on the other side.
 
 ## Effects
 These are the effects supported with the MQTT broker
-1. "MiddenBounce"
-2. "uitbreidReactie"
-3. "vlakMuziek"
-4. "ledsMeDb"
-5. "ledsMeDbRGB"
-6. "allLights"
-7. "bubbelKleur"
-8. "off"
-9. "rainbow"
-10. "rgbKleur" (define the rbg value)
+<ul>
+    <li>"MiddenBounce"</li>
+    <li>"uitbreidReactie"</li>
+    <li>"vlakMuziek"</li>
+    <li>"ledsMeDb"</li>
+    <li>"ledsMeDbFlikker"</li>
+    <li>"rainbow"</li>
+    <li>"rgbKleur" (rgb effect)</li>
+    <li>"ledsMeDbRGB" (rgb effect)</li>
+</ul>
 
 ![2lights](./Images/twolight.jpg)
 
@@ -60,6 +60,7 @@ Our project requires the following hardware and materials to be constructed (lin
 We use a Raspberry Pi 4 to power and drive our project, this is a powerful way in which we can include many different effects.
 
 ### 2. Plug adapter 5V 10A
+
 
 <img src="./Images/Stekkeradapter.jpg" alt="adapterdc" width=300px>
 
@@ -224,6 +225,7 @@ Total: €158.27 (3D printing excluded)
 ## Links
 
 Github: https://github.com/vives-project-xp/DancingLight
+Installatie instructies: https://github.com/vives-project-xp/DancingLight/blob/main/INSTALLATION.md
 
 ## License and author info
 
