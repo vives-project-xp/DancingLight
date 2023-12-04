@@ -1,9 +1,9 @@
-import RPi.GPIO as GPIO
 import paho.mqtt.client as mqttClient
 import time
 import board
 import neopixel
 import threading
+
 
 
 # Configure the Neopixel ring
@@ -37,10 +37,6 @@ kleuren = [
     (255, 255, 0)      # Yellow
 ]
 running = False
-Pin = 16
-
-
-GPIO.setup(Pin, GPIO.IN)
 
 def rainbow():
     kleurindex = 0

@@ -21,7 +21,7 @@ We will be working with a sound sensor which will send a signal depending on the
 
 The project will have a few modes. Some generic effects will be added into a program. Lastly the mode which listens to audio input will also be implemented into the project. We use a USB mic to listen to the audio due to the Raspberry Pi only being able to take in digital input on the GPIO pins.
 
-With this mic we can connect it to a USB port on the Pi and make a program which can observe analog input. This way we can visualize sound strength, frequencies and other sound related variables. With the analog way we can only display light for the on and off state.
+With this mic we can connect it to a USB port on the Pi and make a program which can observe analog input. This way we can visualize sound strength, frequencies and other sound related variables. With the digital pin reading (old mic) way we can only display light for the on and off state.
 
 ![Case](./Images/Case_1.JPG)
 ![Case](./Images/Case_2.JPG)
@@ -33,19 +33,23 @@ At the sides a system was added to connect two cases with each other. It uses an
 Originally we used two parts which would bridge over the Pi to provide light all over the box, but this caused the issue that you could visually see the LED's on one side and only the light on the other side.
 
 ## Effects
-
-1. Audioreact
-    - LedsmeDB.py (Gets brighter based on the decibels)
-    - Uitbreidreactie.py (Leds lighten up on a scale red - green - blue based on decibels)
-2. Rainbow
-3. TwoColors
-The red part simulates box 1 while the green part simulates the second box connected with one of the connectors.
+These are the effects supported with the MQTT broker
+1. "MiddenBounce"
+2. "uitbreidReactie"
+3. "vlakMuziek"
+4. "ledsMeDb"
+5. "ledsMeDbRGB"
+6. "allLights"
+7. "bubbelKleur"
+8. "off"
+9. "rainbow"
+10. "rgbKleur" (define the rbg value)
 
 ![2lights](./Images/twolight.jpg)
 
 ## Hardware
 
-Our projects requires the following hardware and materials to be constructed (links and pricing included in BOM list):
+Our project requires the following hardware and materials to be constructed (links and pricing included in BOM list):
 
 ### 1. Raspberry Pi 4
 
@@ -55,7 +59,7 @@ Our projects requires the following hardware and materials to be constructed (li
 
 We use a Raspberry Pi 4 to power and drive our project, this is a powerful way in which we can include many different effects.
 
-### 2. Stekkeradapter 5V 10A
+### 2. Plug adapter 5V 10A
 
 <img src="./Images/Stekkeradapter.jpg" alt="adapterdc" width=300px>
 
@@ -65,29 +69,29 @@ Of course the Raspberry Pi 4 needs power to work, for that we use this adapter.
 
 <img src="./Images/Adapter-Dc.jpg" alt="adapterdc" width=300px>
 
-### 4. 3Pin Connector
+### 4. 3 Pin Connector
 
 <img src="./Images/3Pin.jpg" alt="3Pin" width=300px>
 
 To connect LED strips we use these connectors, which can easily connect LED strips to eachother by just plugging one end into another. 
 
-### 5. Ledstrip 5V
+### 5. LED strip 5V
 
 <img src="./Images/LED5V.jpg" alt="LEDS" width=300px>
 
-### 6. Geluidssensor
+### 6. Sound sensor
 
 <img src="./Images/Geluidssensor.webp" alt="Geluidssensor" width=300px>
 
 Dropped due to low sensitivity, could also only be connected to digital GPIO pins. This way we had to work with a specific value to work around and can also only play an effect when this value is exceeded.
 
-### 7. USB-microfoon
+### 7. USB microphone
 
 <img src="./Images/usbmic.jpg" alt="usb" width=300px>
 
 We chose to use a different approach by using this USB-mic to be able to take in analog input to create effects based on the strength of the sound. With some calculations found online we can determine the decibel rate of the sound. This mic is way more sensitive to sound, even lighting up from silent sounds far away (depending on the chosen value of course).
 
-### 8. Casing 3D print
+### 8. Casing 3D prints
 
 ## Software
 
@@ -142,6 +146,7 @@ Inventor gives the ability to make 3D designs for making this project possible. 
 3. Rasberry configuration
 4. MQTT
 5. Coding effects
+6. Sound detection on raspberry pi 4
 
 - ### William (Software & ai)
 
@@ -163,7 +168,8 @@ Inventor gives the ability to make 3D designs for making this project possible. 
 1. README documentation
 2. Searching code
 3. Coding to read mp3 file (and sound based effects)
-4. Coding effects
+4. Sound coding
+5. Coding effects
 
 - ### Planning
 
@@ -203,9 +209,9 @@ Inventor gives the ability to make 3D designs for making this project possible. 
 | 3Pin Connector | 1 | [€9.99](https://www.amazon.nl/HUAZIZ-vrouwelijk-mannelijke-vrouwelijke-elektrische/dp/B0BPP87N9G/ref=sr_1_5?crid=11ONOETG871I1&keywords=3+pin+connector&qid=1696237070&sprefix=3+pin+connec%2Caps%2C281&sr=8-5) |
 |Raspberry Pi |1|[€86.17](https://www.amazon.nl/Raspberry-Pi-ARM-Cortex-A72-Bluetooth-Micro-HDMI/dp/B07TC2BK1X/ref=sr_1_6?crid=UVXPOXO03958&keywords=raspberry%2Bpi%2B4&qid=1696238540&sprefix=raspberyr%2Caps%2C434&sr=8-6&th=1)|
 |USB Microfoon|1|[€7.11](https://www.amazon.nl/Audio-opnemen-USB-microfoon-omnidirectioneel-Skype-chatten/dp/B08BFHSLGV/ref=sr_1_5?__mk_nl_NL=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2LOMGXB9RSJ61&keywords=fasient%2BUSB-pc-microfoon&qid=1697532932&sprefix=fasient%2Busb-pc-microfoon%2Caps%2C160&sr=8-5&th=1)|
-| 3D printing | 1 | €4 (voorbehouden) |
+| 3D printing | 1 | €4 (reserved) |
 
-Totaal: €158.27 (exclusief 3D print)
+Total: €158.27 (3D printing excluded)
 
 ## Links
 
