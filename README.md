@@ -34,16 +34,18 @@ Originally we used two parts which would bridge over the Pi to provide light all
 
 ## Effects
 These are the effects supported with the MQTT broker
-1. "MiddenBounce"
-2. "uitbreidReactie"
-3. "vlakMuziek"
-4. "ledsMeDb"
-5. "ledsMeDbRGB"
-6. "allLights"
-7. "bubbelKleur"
-8. "off"
-9. "rainbow"
-10. "rgbKleur" (define the rbg value)
+<ul>
+    <li>"MiddenBounce"</li>
+    <li>"uitbreidReactie"</li>
+    <li>"vlakMuziek"</li>
+    <li>"ledsMeDb"</li>
+    <li>"ledsMeDbFlikker"</li>
+    <li>"rainbow"</li>
+    <li>"rgbKleur" (rgb effect)</li>
+    <li>"ledsMeDbRGB" (rgb effect)</li>
+    <li></li>
+    <li></li>
+</ul>
 
 ![2lights](./Images/twolight.jpg)
 
