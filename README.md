@@ -43,8 +43,6 @@ These are the effects supported with the MQTT broker
     <li>"rainbow"</li>
     <li>"rgbKleur" (rgb effect)</li>
     <li>"ledsMeDbRGB" (rgb effect)</li>
-    <li></li>
-    <li></li>
 </ul>
 
 ![2lights](./Images/twolight.jpg)
