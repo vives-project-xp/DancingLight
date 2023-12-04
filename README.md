@@ -224,6 +224,7 @@ Total: €158.27 (3D printing excluded)
 ## Links
 
 Github: https://github.com/vives-project-xp/DancingLight
+Installatie instructies: https://github.com/vives-project-xp/DancingLight/blob/main/INSTALLATION.md
 
 ## License and author info
 
