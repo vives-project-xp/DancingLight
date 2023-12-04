@@ -158,7 +158,8 @@ Secondly you screw off the magnets who are inserted in to the standoffs on both 
 
 1. Poster design
 2. Presentation
-3. Searching code for the microphone
+3. Searching code for the microphones
+4. Integrating hardware to the Raspberry Pi.
 
 - ### Elias (Networks)
 
