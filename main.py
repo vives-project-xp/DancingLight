@@ -12,62 +12,66 @@ import pyaudio
 import queue
 
 #Als dit programma uitgevoert wordt bij opstart dan is dit nodig omdat het anders start voordat audio drivers en andere essentiele dingen opgestart zijn.
-time.sleep(15)
-
+time.sleep(1)
+doosNummer = [3]
 #t1 = thread voor effect op te laten uitvoeren, mainthread gaat controle uitvoeren over welk effect er in t1 zit.
-t1 = threading.Thread()
+doosThreads = [threading.Thread(),threading.Thread(),threading.Thread()]
 
 #messages is een queue met de doorgegeven effecten via mqtt in, (queue voor bescherming tegen spam)
 messages = queue.Queue()
+messages_doos = queue.Queue()
 #standaard effect starten
 messages.put("ledsMeDbRGB")
+messages.put("ledsMeDbRGB")
+messages_doos.put(0)
+messages_doos.put(1)
 
 #in een array om er in andere threads ook aan te kunnen
 #eerste is voor als het effect mag blijven runnen (wordt op false gezet door de mainthread), tweede is voor als het effect gestopt is dan weet de mainthread dat het een ander effect mag starten.
-booleans = [False, True]#running, stoped
+booleans = [[False, True],[False,True],[False,True]]#running, stoped
 #mqtt rgb waarden uit de rgb topics komen hierin terecht en zijn altijd berijkbaar/aanpasbaar
-rgb = [0,255,80]
-rgb2 = [0,255,80]
+rgb = [[255,255,0],[0,255,255],[0,255,255]]
 #voor als we de command "off" krijgen, dan moeten we onthouden aan welk effect we zaten voor als het weer op "on" komt
-laatsteEffect = ["ledsMeDbRGB"]
+laatsteEffect = ["ledsMeDbRGB","ledsMeDbRGB","ledsMeDbRGB"]
 #configuratie binnenlezen
 mqttfile = open("/mqttCred.conf","r")
 configuratie = mqttfile.readlines()
 #topics binnenlezen en in variabelen steken (laatste charakter is een \n dus je moet deze uitsluiten)
-effecttopic = configuratie[9][0:len(configuratie[9])-1]
-rgbtopic = configuratie[11][0:len(configuratie[11])-1]
-commandtopic = configuratie[13][0:len(configuratie[13])-1]
-rgbtopic2 = configuratie[15][0:len(configuratie[15])-1]
+topicPath = configuratie[9][0:len(configuratie[9])-1]
+effecttopic = configuratie[11][0:len(configuratie[11])-1]
+rgbtopic = configuratie[13][0:len(configuratie[13])-1]
+commandtopic = configuratie[15][0:len(configuratie[15])-1]
 
 #functie die wordt uitgevoert als we een bericht krijgen via mqtt
 def on_message(client, userdata, message):
     #bericht decoderen
     bericht = str(message.payload.decode("utf-8"))
+    topicIndex = -1
+    for i in Topics:
+        if(Topics[i] == message.topic):
+            topicIndex = i
+            break
+    if(topicIndex == -1): return
     #als het bericht van de effect topic afkomstig is.. de rest van de ifs begrijp je wel zelf
-    if(message.topic==effecttopic):
+    if(topicIndex%3==0):
         #effect toevoegen aan de queue
-        messages.put(bericht)
+        message.put(bericht)
+        messages_doos.put(floor(topicIndex/3))
         #laatste effect updaten
-        laatsteEffect[0] = bericht
-    if(message.topic==commandtopic):
+        laatsteEffect[floor(topicIndex/3)] = bericht
+    if(topicIndex%3==1):
         if(bericht == "ON"):
             messages.put(laatsteEffect[0])
         elif(bericht == "OFF"):
             messages.put("off")
-    if(message.topic == rgbtopic):
+        messages_doos.put(floor(topicIndex/3))
+    if(topicIndex%3==2):
         dat = bericht.split(',')
         #als er foutive data is dan worden de rgb waarden niet upgedated
         for i in range(3):
             try:
-                rgb[i] = int(dat[i])%256 #om binnen 0-255 te blijven
+                rgb[floor(topicIndex/3)][i] = int(dat[i])%256 #om binnen 0-255 te blijven
             except:
-                print("error data")
-    if(message.topic == rgbtopic2):
-        dat = bericht.split(',')
-        for i in range(3):
-            try:
-                rgb2[i] = int(dat[i])%256
-            except:	
                 print("error data")
     print(message.topic,bericht)#snel bugs vinden
 
@@ -89,7 +93,7 @@ def callback(in_data, frame_count, time_info, status):
     return in_data, pyaudio.paContinue
 
 #Ledstrip instellingen definieren + pixel array (letterlijk een 1D array met de kleuren van alle leds) aanmaken
-num_pixels = 64
+num_pixels = 96
 pixel_pin = board.D18
 ORDER = neopixel.GRBW
 pixels = neopixel.NeoPixel(pixel_pin, num_pixels, auto_write=False, pixel_order=ORDER)
@@ -145,17 +149,17 @@ GPIO.setup(Pin, GPIO.IN)
 
 #hier zijn alle effecten aangepast om te werken met de threading:
 #dit zijn effecten maar het is een beetje veel om bij ze allemaal een concrete werking te commenten, het is wel makkelijk te begrijpen
-def rainbow():
+def rainbow(doosIndex):
     kleurindex = 0
     halvepixels = 0
     extra = 0
     while True:
         for i in range(halvepixels):
-            pixels[30-halvepixels+i] = kleuren[(i+extra)%len(kleuren)]
-            pixels[29+halvepixels-i] = kleuren[(i+extra)%len(kleuren)]
+            pixels[16-halvepixels+i + (doosIndex*32)] = kleuren[(i+extra)%len(kleuren)]
+            pixels[15+halvepixels-i+ (doosIndex*32)] = kleuren[(i+extra)%len(kleuren)]
         time.sleep(0.01)
         pixels.show()#dit commando zorgt ervoor dat alle kleuren aangewezen aan pixels worden weergegeven
-        if(halvepixels == 30):
+        if(halvepixels == 16+ (doosIndex*32)):
           extra += 1
         else:
           halvepixels += 1
@@ -173,13 +177,10 @@ def anyColor(r, g, b, r2, g2, b2):
     pixels.show()
     booleans[1] = True
     
-def rgbKleur():
+def rgbKleur(doosIndex):
     while(True):
-        for i in range(0, int(num_pixels/2)):
+        for i in range(0+ (doosIndex*32),(doosIndex*32)+32):
             pixels[i] = (rgb[0], rgb[1], rgb[2])#rgb waarden van mqtt constant uitlezen
-        
-        for i in range(int(num_pixels/2), num_pixels):
-            pixels[i] = (rgb2[0], rgb2[1], rgb2[2])
         pixels.show()
         time.sleep(1)
         if(booleans[0]==False):
@@ -251,7 +252,7 @@ def ledsMeDbFlikker():
     stream.stop_stream()#stoppen met naar de audio invoer te luisteren
     booleans[1] = True
 
-def ledsMeDb():
+def ledsMeDb(doosIndex):
     stream.start_stream()
     minste = 0
     meeste = 1
@@ -291,7 +292,7 @@ def ledsMeDb():
     stream.stop_stream()
     booleans[1] = True
     
-def ledsMeDbRGB():
+def ledsMeDbRGB(doosIndex):
     stream.start_stream()
     minste = 0
     meeste = 1
@@ -323,12 +324,13 @@ def ledsMeDbRGB():
             recentminste = positf
             recentmeeste = positf
         filled_progbar  = ((positf-minste)/(meeste-minste))*16
-        pixels.fill((round((rgb[0]/16)*filled_progbar),round((rgb[1]/16)*filled_progbar),round((rgb[2]/16)*filled_progbar)))
+        for i in range((doosIndex*32),(doosIndex*32)+32):
+            pixels[i] = (((rgb[doosIndex][0]/16)*filled_progbar),round((rgb[doosIndex][1]/16)*filled_progbar),round((rgb[doosIndex][2]/16)*filled_progbar))#rgb waarden van mqtt constant uitlezen
         pixels.show()
-        if(booleans[0] == False):
+        if(booleans[doosIndex][0] == False):
             break
     stream.stop_stream()
-    booleans[1] = True
+    booleans[doosIndex][1] = True
 
 def vlakMuziek():
     minste = 0
@@ -426,8 +428,8 @@ Connected = False   #global variable for the state of the connection
 broker_address= configuratie[3][0:len(configuratie[3])-1] #"projectmaster.devbit.be"  #Broker address
 port =int(configuratie[1])               #Broker port
 print(port)
-user = configuratie[5][0:len(configuratie[5])-1]#            #plaats dit in de repo zonder wachtwoorden
-password = configuratie[7][0:len(configuratie[7])-1]#          #Connection password
+user = configuratie[5][0:len(configuratie[5])-1]#plaats dit in de repo zonder wachtwoorden
+password = configuratie[7][0:len(configuratie[7])-1]#Connection password
   
 #paho mqtt client aanzetten
 client = mqttClient.Client("raspberry pi")               #create new instance
@@ -442,7 +444,13 @@ while Connected != True:
     time.sleep(0.1)
 
 #subscriben op alle topics die in het config bestand stonden
-client.subscribe([(effecttopic,0),(rgbtopic,0),(commandtopic,0),(rgbtopic2,0)])
+sublist = []
+Topics = []
+for i in range(doosNummer[0]):
+    Topics.append([topicPath+str(i)+effecttopic,topicPath+str(i)+rgbtopic,topicPath+str(i)+commandtopic])
+    for j in range(3):
+        sublist.append((Topics[i][j],0))
+client.subscribe(sublist)
 
 try:
     #oneindige lus starten in de main thread
@@ -454,12 +462,13 @@ try:
         #als er een bericht binnen kwam (effect)
         if (messages.qsize()>0):
             bericht = messages.get()
+            Topicindex = messages_doos.get()
             print("Message received: "  + bericht+ "; booleans[1]=",booleans[1])#voor debug
-            booleans[0] = False #sijn geven aan effect thread om op te houden
-            if booleans[1] == False:
-                while booleans[1]==False:
+            booleans[Topicindex][0] = False #sijn geven aan effect thread om op te houden
+            if booleans[Topicindex][1] == False:
+                while booleans[Topicindex][1]==False:
                     time.sleep(0.1)
-                    print("wait", booleans[1])#zolang dat de thread nog niet gestopt is
+                    print("wait", booleans[Topicindex][1])#zolang dat de thread nog niet gestopt is
                 t1.join()#alleen joinen als ie al aan het runnen was (dus niet voor het eerste effect)
             if bericht == "rainbow":#als bericht == effect naam: t1 = thread(effect), altijd hetzelfde
                 t1 = threading.Thread(target=rainbow)
@@ -487,10 +496,10 @@ try:
                 booleans[1] = False
                 t1.start()
             if bericht == "ledsMeDbRGB":
-                t1 = threading.Thread(target=ledsMeDbRGB)
-                booleans[0] = True
-                booleans[1] = False
-                t1.start()
+                doosThreads[Topicindex] = threading.Thread(target=ledsMeDbRGB, kwargs={"doosIndex":Topicindex})
+                booleans[Topicindex][0] = True
+                booleans[Topicindex][1] = False
+                doosThreads[Topicindex].start()
             if bericht == "vlakMuziek":
                 t1 = threading.Thread(target=vlakMuziek)
                 booleans[0] = True
