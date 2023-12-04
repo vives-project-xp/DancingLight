@@ -4,19 +4,19 @@ All the parts are made in the software inventor proffesional 2021. Al the parts 
 
 
 
-![case](../Images/3D%20README_2.PNG)
+![case](../Images/3D%20README_2.png)
 Here is a discription of the different parts (is the name in the 3D map).
 1. The highest case (Led behuizing dubbele hoogte )
 
 2. The lower form of the case (Led behuizing).
 
-![case](../Images/3D%20README_3.PNG)
+![case](../Images/3D%20README_3.png)
 
 3. The lid where the pi is mounted on (Led deksel hub).
 
 4. The lid without a pi (Led deksel hub zonder pi).
 
-![case](../Images/3D%20README_4.PNG)
+![case](../Images/3D%20README_4.png)
 
 5. Magnet stand-offs small box (magneet stand-offs).
 
