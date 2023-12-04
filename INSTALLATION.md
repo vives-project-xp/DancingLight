@@ -83,7 +83,37 @@ python3 main.py
 
 ### Step 6: Change the Effect with MQTT Explorer
 
+First you need to configure the right credentials and mqtt settings on the pi, for this you need to create a file named "mqttCred.conf" in the root folder. In this file you have to paste the following and change the ### with the mqtt settings you recieve from your mqtt broker admin, if you don't use a local broker but still want to command the boxes you can use an online broker (test.mosquitto.org on port 1883), you can define you own toppics there and have to use an empty string for password an user:
+```bash
+port:
+###
+broker_address:
+###
+user:
+###
+password:
+###
+effect-topic:
+###
+rgb-topic:
+###
+command-topic:
+###
+rgb2-topic:
+###
+```
 To change the effect, you will need to install MQTT Explorer on your computer. You can download MQTT Explorer from the [MQTT Explorer website](http://mqtt-explorer.com/).
+When opening MQTT Explorer you need to click on the +Connections and enter the same configuration that you entered in the "mqttCred.conf" file.
+![Inlog mqtt explorer](https://github.com/vives-project-xp/DancingLight/blob/main/Images/mqtt%20Explorer%20Login.png?raw=true)
+then you click connect and you wil get to a screen that looks a bit like this:
+![MQTT Main](https://github.com/vives-project-xp/DancingLight/blob/main/Images/mqtt%20Client.png?raw=true)
+There are a few types of info you can give to the boxes:
+<ul>
+  <li>Which effect it needs to play</li>
+  <li>A command to turn the box off or on</li>
+  <li>What rgb value there needs to be for effects that are rgb based</li>
+</ul>
+To give information to the boxes you need to go to the section "Publish" and then type by "Topic the topic you entered in "mqttCred.conf", select "raw" and type the effect, command or rgb-value that you want, then click on "Publish". A list of all effects you can find in this repo under documentatie/mqtt broker.txt. for rgb value you need to give the decimal values of the RGB values seperated with commas (',') without spaces, Example: "255,0,255".
 
 ### Step 7: Make the program run on boot (optional)
 
