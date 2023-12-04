@@ -121,6 +121,12 @@ Inventor gives the ability to make 3D designs for making this project possible. 
 
 <img src="./Images/Inventor.JPG" alt="mqtt" width=600px>
 
+## How is the box build?
+WARNING: When picking the project up from the amgnet board you need to be carefull to not pull it off to quick. And brake the project also the boxes are connect with clips so be carefull when pulling the different boxes apart. 
+
+To disasemble the setup you first need to pull the boxes apart and pull out the clips inbetween of the two boxes.
+Secondly you screw off the magnets who are inserted in to the standoffs on both boxes. When the magnets are of you will be able to pull of the lid from the smaller box and you will see the leds. For the bigger boxs you will need to first screw off the spacers out of the biggerbox. These screws are pretty thight so be carefull when unscrewing them. When alle the spacer are unscrewed you will be able to pull of the lid from the bigger box with the pi and wires still attage. For the ease of use you can disconnect the wires going to the pi to get a look in the bigger box. Everything is power by the famel plug and this one is glued in place so be carefull when pulling out the lid. 
+
 ## Who does/did what?
 
 - ### Global (entire group)
@@ -162,6 +168,7 @@ Inventor gives the ability to make 3D designs for making this project possible. 
 4. Soldering
 5. Assembly
 6. README documentation
+7. README 3D
 
 - ### Esteban (Software & ai)
 
@@ -194,9 +201,9 @@ Inventor gives the ability to make 3D designs for making this project possible. 
 
 ## Future changes
 
-1. Adding more boxes
+1. Adding better solution for connecting the different boxes.
 2. More effects
-3. ...
+
 
 ## BOM
 
