@@ -21,7 +21,7 @@ We will be working with a sound sensor which will send a signal depending on the
 
 The project will have a few modes. Some generic effects will be added into a program. Lastly the mode which listens to audio input will also be implemented into the project. We use a USB mic to listen to the audio due to the Raspberry Pi only being able to take in digital input on the GPIO pins.
 
-With this mic we can connect it to a USB port on the Pi and make a program which can observe analog input. This way we can visualize sound strength, frequencies and other sound related variables. With the analog way we can only display light for the on and off state.
+With this mic we can connect it to a USB port on the Pi and make a program which can observe analog input. This way we can visualize sound strength, frequencies and other sound related variables. With the digital pin reading (old mic) way we can only display light for the on and off state.
 
 ![Case](./Images/Case_1.JPG)
 ![Case](./Images/Case_2.JPG)
