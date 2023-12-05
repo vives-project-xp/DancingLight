@@ -3,7 +3,6 @@ luistert niet naar rgb toppics:
 "MiddenBounce"
 "uitbreidReactie"
 "vlakMuziek"
-"ledsMeDb"
 "ledsMeDbFlikker"
 "off"
 "rainbow"
