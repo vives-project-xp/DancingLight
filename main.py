@@ -1,4 +1,4 @@
-#packetten importeren
+#packages importeren
 import paho.mqtt.client as mqttClient
 import time
 import threading
@@ -12,13 +12,13 @@ import audioop
 import pyaudio
 import queue
 
-#Als dit programma uitgevoert wordt bij opstart dan is dit nodig omdat het anders start voordat audio drivers en andere essentiele dingen opgestart zijn.
+#Als dit programma uitgevoerd wordt bij opstart dan is dit nodig omdat het anders start voor dat audio drivers en andere essentiele dingen opgestart zijn.
 time.sleep(1)
 doosNummer = [3]
-#t1 = thread voor effect op te laten uitvoeren, mainthread gaat controle uitvoeren over welk effect er in t1 zit.
+#t1 = thread om effect op te laten uitvoeren, mainthread gaat controle uitvoeren over welk effect er in t1 zit.
 doosThreads = [threading.Thread(),threading.Thread(),threading.Thread()]
 muziekLuisteraars = [0]
-#messages is een queue met de doorgegeven effecten via mqtt in, (queue voor bescherming tegen spam)
+#messages is een queue met het doorgegeven effecten via mqtt in, (queue voor bescherming tegen spam)
 messages = queue.Queue()
 #standaard effect starten
 messages.put(("ledsMeDbRGB",1))
@@ -34,13 +34,13 @@ laatsteEffect = ["ledsMeDbRGB","ledsMeDbRGB","ledsMeDbRGB"]
 #configuratie binnenlezen
 mqttfile = open("/mqttCred.conf","r")
 configuratie = mqttfile.readlines()
-#topics binnenlezen en in variabelen steken (laatste charakter is een \n dus je moet deze uitsluiten)
+#topics binnenlezen en in variabelen steken (laatste character is een \n dus je moet deze uitsluiten)
 topicPath = configuratie[9][0:len(configuratie[9])-1]
 effecttopic = configuratie[11][0:len(configuratie[11])-1]
 rgbtopic = configuratie[13][0:len(configuratie[13])-1]
 commandtopic = configuratie[15][0:len(configuratie[15])-1]
 
-#functie die wordt uitgevoert als we een bericht krijgen via mqtt
+#functie die wordt uitgevoerd als we een bericht krijgen via mqtt
 def on_message(client, userdata, message):
     #bericht decoderen
     bericht = str(message.payload.decode("utf-8"))
@@ -64,7 +64,7 @@ def on_message(client, userdata, message):
             messages.put(("off",math.floor(topicIndex/3)))
     if(topicIndex%3==1):
         dat = bericht.split(',')
-        #als er foutive data is dan worden de rgb waarden niet upgedated
+        #als er foutieve data is dan worden de rgb waarden niet geupdate
         for i in range(3):
             try:
                 rgb[math.floor(topicIndex/3)][i] = int(dat[i])%256 #om binnen 0-255 te blijven
@@ -83,7 +83,7 @@ def on_connect(client, userdata, flags, rc):
     else:
         print("Connection failed")
 
-#root mean square berekenen maar ik weet niet waar dit wordt opgeroepen
+#root mean square berekenen
 def callback(in_data, frame_count, time_info, status):
     global rms
     rms = audioop.rms(in_data, WIDTH) / 32767
@@ -193,26 +193,26 @@ def ledsMeDbFlikker(doosIndex):
     verhoogen = True
     while stream.is_active():
         db = 20 * log10(rms)#db gaat van -40 tot 0 somehow op dit apparaat
-        positf = ((db+40))
-        if(positf<minste):
-            minste = positf
-        if(positf>meeste):	#er is een bug waarbij positif 40 is bij eerste iteratie, ook is 40 de maximuum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
-            if positf == 40:
-                positf = meeste
-            meeste = positf
-        if(positf<recentminste):
-            recentminste = positf
-        if(positf>recentmeeste):	#er is een bug waarbij positif 40 is bij eerste iteratie, ook is 40 de maximuum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
-            if positf == 40:
-                positf = recentmeeste
-            recentmeeste = positf
+        positive = ((db+40))
+        if(positive<minste):
+            minste = positive
+        if(positive>meeste):	#er is een bug waarbij positive 40 is bij eerste iteratie, ook is 40 de maximum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
+            if positive == 40:
+                positive = meeste
+            meeste = positive
+        if(positive<recentminste):
+            recentminste = positive
+        if(positive>recentmeeste):	#er is een bug waarbij positive 40 is bij eerste iteratie, ook is 40 de maximum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
+            if positive == 40:
+                positive = recentmeeste
+            recentmeeste = positive
         if(datetime.datetime.now() > nieuwcheckinterval):
             meeste = recentmeeste
             minste = recentminste
             nieuwcheckinterval = datetime.datetime.now() + datetime.timedelta(0,5)
-            recentminste = positf
-            recentmeeste = positf
-        filled_progbar  = round((positf-minste)/(meeste-minste)*16)
+            recentminste = positive
+            recentmeeste = positive
+        filled_progbar  = round((positive-minste)/(meeste-minste)*16)
         if filled_progbar > 6:
             fillPixelsIndex(filled_progbar*RGB[0],filled_progbar*RGB[1],filled_progbar*RGB[2],doosIndex)
         else:
@@ -241,26 +241,26 @@ def ledsMeDbRGB(doosIndex):
     nieuwcheckinterval = datetime.datetime.now() + datetime.timedelta(0,5)
     while stream.is_active(): 
         db = 20 * log10(rms)#db gaat van -40 tot 0 somehow op dit apparaat
-        positf = ((db+40))
-        if(positf<minste):
-            minste = positf
-        if(positf>meeste):	#er is een bug waarbij positif 40 is bij eerste iteratie, ook is 40 de maximuum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
-            if positf == 40:
-                positf = meeste
-            meeste = positf
-        if(positf<recentminste):
-            recentminste = positf
-        if(positf>recentmeeste):	#er is een bug waarbij positif 40 is bij eerste iteratie, ook is 40 de maximuum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
-            if positf == 40:
-                positf = recentmeeste
-            recentmeeste = positf
+        positive = ((db+40))
+        if(positive<minste):
+            minste = positive
+        if(positive>meeste):	#er is een bug waarbij positive 40 is bij eerste iteratie, ook is 40 de maximum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
+            if positive == 40:
+                positive = meeste
+            meeste = positive
+        if(positive<recentminste):
+            recentminste = positive
+        if(positive>recentmeeste):	#er is een bug waarbij positive 40 is bij eerste iteratie, ook is 40 de maximum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
+            if positive == 40:
+                positive = recentmeeste
+            recentmeeste = positive
         if(datetime.datetime.now() > nieuwcheckinterval):
             meeste = recentmeeste
             minste = recentminste
             nieuwcheckinterval = datetime.datetime.now() + datetime.timedelta(0,5)
-            recentminste = positf
-            recentmeeste = positf
-        filled_progbar  = ((positf-minste)/(meeste-minste))*16
+            recentminste = positive
+            recentmeeste = positive
+        filled_progbar  = ((positive-minste)/(meeste-minste))*16
         for i in range((doosIndex*32),(doosIndex*32)+32):
             pixels[i] = (((rgb[doosIndex][0]/16)*filled_progbar),round((rgb[doosIndex][1]/16)*filled_progbar),round((rgb[doosIndex][2]/16)*filled_progbar))#rgb waarden van mqtt constant uitlezen
         pixels.show()
@@ -281,26 +281,26 @@ def vlakMuziek(doosIndex):
     muziekLuisteraars[0] += 1
     while stream.is_active(): 
         db = 20 * log10(rms)#db gaat van -40 tot 0 somehow op dit apparaat
-        positf = ((db+40))
-        if(positf<minste):
-            minste = positf
-        if(positf>meeste):	#er is een bug waarbij positif 40 is bij eerste iteratie, ook is 40 de maximuum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
-            if positf == 40:
-                positf = meeste
-            meeste = positf
-        if(positf<recentminste):
-            recentminste = positf
-        if(positf>recentmeeste):	#er is een bug waarbij positif 40 is bij eerste iteratie, ook is 40 de maximuum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
-            if positf == 40:
-                positf = recentmeeste
-            recentmeeste = positf
+        positive = ((db+40))
+        if(positive<minste):
+            minste = positive
+        if(positive>meeste):	#er is een bug waarbij positive 40 is bij eerste iteratie, ook is 40 de maximwum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
+            if positive == 40:
+                positive = meeste
+            meeste = positive
+        if(positive<recentminste):
+            recentminste = positive
+        if(positive>recentmeeste):	#er is een bug waarbij positive 40 is bij eerste iteratie, ook is 40 de maximum waarde van het geluid toestel dus dit zullen we bijna nooit in de code als resultaat krijgen
+            if positive == 40:
+                positive = recentmeeste
+            recentmeeste = positive
         if(datetime.datetime.now() > nieuwcheckinterval):
             meeste = recentmeeste
             minste = recentminste
             nieuwcheckinterval = datetime.datetime.now() + datetime.timedelta(0,5)
-            recentminste = positf
-            recentmeeste = positf
-        filled_progbar  = round((positf-minste)/(meeste-minste))
+            recentminste = positive
+            recentmeeste = positive
+        filled_progbar  = round((positive-minste)/(meeste-minste))
         if filled_progbar> 0.5 and verander == False:
             verander = True
             index += 1
@@ -358,7 +358,7 @@ def MiddenBounce(doosIndex):
     booleans[doosIndex][1] = True  #stopped op true zetten
 
 Connected = False   #global variable for the state of the connection
-#deze code wordt nogsteeds enkel in het begin uitgevoert, hiervoor waren het 
+#deze code wordt nog steeds enkel in het begin uitgevoert, hiervoor waren het 
 #mqtt instellingen configureren
 broker_address= configuratie[3][0:len(configuratie[3])-1] #"projectmaster.devbit.be"  #Broker address
 port =int(configuratie[1])               #Broker port
@@ -393,7 +393,7 @@ print(Topics)
 try:
     #oneindige lus starten in de main thread
     while True:
-        #wordt elke seconde uitgevoert (als hij niet ergens blijft hangen)(1 seconde + loop tijd)
+        #wordt elke seconde uitgevoerd (als hij niet ergens blijft hangen)(1 seconde + loop tijd)
         time.sleep(1)
         #als er een bericht binnen kwam (effect)
         if (messages.qsize()>0):
@@ -401,12 +401,12 @@ try:
             bericht = short[0]
             Topicindex = short[1]
             print("Message received:",bericht,"voor doos:", Topicindex)#voor debug
-            booleans[Topicindex][0] = False #sijn geven aan effect thread om op te houden
+            booleans[Topicindex][0] = False #sein geven aan effect thread om op te houden
             if booleans[Topicindex][1] == False:
                 while booleans[Topicindex][1]==False:
                     time.sleep(0.1)
                     print("wait", booleans[Topicindex][1])#zolang dat de thread nog niet gestopt is
-                doosThreads[Topicindex].join()#alleen joinen als ie al aan het runnen was (dus niet voor het eerste effect)
+                doosThreads[Topicindex].join()#alleen joinen als hij al aan het runnen was (dus niet voor het eerste effect)
             if(muziekLuisteraars[0] == 0):
                 stream.stop_stream()
             if bericht == "rainbow":#als bericht == effect naam: t1 = thread(effect), altijd hetzelfde
