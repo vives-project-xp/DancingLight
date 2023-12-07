@@ -4,7 +4,7 @@ All parts are made in the software Inventor Professional 2021. To open the proje
 
 This way you open all the parts that are needed for this project and you can see how all the parts fit together. In the pictures below you will see the assembly with a numbering of what the parts are/what they do with the naming of this part. All the parts are 3D printed except the stand-offs and bought parts like the Raspberry Pi and barrel jack.
 
-The folder with name "13_11_2023" is where al the latest pieces are. The other folder with name "13_11_2023 stukken niet meer nodig", are pieces who where made in the prototyping stage and are not needed anymore for the project.
+The folder with name "13_11_2023" is where all the latest pieces are. The other folder with name "13_11_2023 stukken niet meer nodig", are pieces who where made in the prototyping stage and are not needed anymore for the project.
 
 If you want to remake this project on your own 3D printer that is possible with the 3D stl files provided in the map "STL 14-11-2023" and "STL 27-11-2023".
 
