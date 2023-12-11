@@ -341,13 +341,16 @@ def MiddenBounce(doosIndex):
     while True:
         kleur = kleuren[index]
         for i in range(aantal):
-            pixel = 32*doosIndex - 1
-            pixels[pixel-i+32*doosIndex] = kleur
-            pixels[i+32*doosIndex] = kleur
+            pixel = 32*doosIndex
+            furtherpixel = 32*(doosIndex+1)-1
+            pixels[pixel+i] = kleur
+            pixels[furtherpixel-i] = kleur
             pixels.show()
         for i in range(aantal):
-            pixels[aantal+i+32*doosIndex] = (0,0,0)
-            pixels[aantal-i+32*doosIndex] = (0,0,0)
+            pixel = 32*doosIndex
+            furtherpixel = 32*(doosIndex+1)-1
+            pixels[pixel+aantal-i] = (0,0,0)
+            pixels[furtherpixel-aantal+i] = (0,0,0)
             pixels.show()
         index += 1
         if index == len(kleuren):
